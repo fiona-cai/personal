@@ -38,8 +38,8 @@ body {
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    hwb(311 42% 3%) 0%,
-    #6b6bf8cc 100%
+    #7EE562 0%,
+    #7ee5627c 100%
   );
 }
 
@@ -51,7 +51,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
+  background: linear-gradient(-45deg, #7EE562 0%, #7ee5627c 100%);
   transform: translate3d(0px, 20px, 0) scale(0.95);
   filter: blur(20px);
   opacity: var(0.7);
