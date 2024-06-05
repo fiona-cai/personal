@@ -11,10 +11,15 @@ import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
 import Spline from "../components/Spline";
+import Image from 'next/image'
+
 
 
 // Local Data
 import data from "../data/portfolio.json";
+
+//images
+
 
 export default function Home() {
   // Ref
@@ -58,13 +63,14 @@ export default function Home() {
       </Head>
 
       <div className="gradient-circle"></div>
+      <div className="gradient-circle2"></div>
       <div className="gradient-circle-bottom"></div>
-
-      <div className="container mx-auto mb-10">
-        <Header
+      <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
+      <div className="container mx-auto mb-10">
+        
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5 flex items-center justify-around" >
             <div className="">
@@ -82,7 +88,7 @@ export default function Home() {
               </h1>
               <h1
                 ref={textThree}
-                className="text-2xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-l tablet:text-2xl laptop:text-3xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineThree}
               </h1>
@@ -96,8 +102,19 @@ export default function Home() {
             <Spline></Spline> 
           </div>
 
+        
         </div>
+        <h1 className="text-2xl text-bold">About.</h1>
+
+        <div className="mt-30 p-2 flex flex-wrap flex-row-reverse items-center justify-center	" ref={aboutRef}>
+          <p className="m-10 text-xl laptop:text-2xl w-1/2 ">
+            {data.aboutpara}
+          </p>
+          <Image src="/images/DSC00594.jpg" width="270vw" height="180vw" layout=""/>
+        </div>
+
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+          
           <h1 className="text-2xl text-bold">Work.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
@@ -133,12 +150,7 @@ export default function Home() {
             </Link>
           </div>
         )}
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
-        </div>
+        
         <Footer />
       </div>
     </div>

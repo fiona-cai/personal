@@ -16,17 +16,39 @@ body {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  top: -30px;
-  height: 50px;
-  width: 120vw;
+  top: -20px;
+  right: 400px;
+  height: 100px;
+  rotate: -20deg;
+  width: 100vw;
   opacity: 0.5;
-  filter: blur(50px);
+  filter: blur(120px);
   background: radial-gradient(
     circle,
     #7EE562 0%,
     #7ee5627c 100%
   );
 }
+
+
+.gradient-circle2 {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  top: 200px;
+  right: -200px;
+  height: 100px;
+  rotate: -80deg;
+  width: 50vw;
+  opacity: 0.5;
+  filter: blur(200px);
+  background: radial-gradient(
+    circle,
+    #7EE562 0%,
+    #7ee5627c 100%
+  );
+}
+
 .gradient-circle-bottom {
   position: absolute;
   pointer-events: none;
