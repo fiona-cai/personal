@@ -107,10 +107,10 @@ export default function Home() {
         <h1 className="text-2xl text-bold">About.</h1>
 
         <div className="mt-30 p-2 flex flex-wrap flex-row-reverse items-center justify-center	" ref={aboutRef}>
-          <p className="m-10 text-xl laptop:text-2xl w-1/2 ">
+          <Image src="/images/DSC00594.jpg" width="270vw" height="180vw" layout=""/>
+          <p className="m-10 text-xl mob:w-1/2 tablet:w-3/5 laptop:text-2xl w-full ">
             {data.aboutpara}
           </p>
-          <Image src="/images/DSC00594.jpg" width="270vw" height="180vw" layout=""/>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
