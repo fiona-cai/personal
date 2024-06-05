@@ -70,49 +70,43 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-      <div className="container mx-auto mb-10">
+      <div className="">
         
-        <div className="laptop:mt-20 mt-10">
-          <div className="my-5 ml-5 flex items-center justify-between" >
+        <div className="mx-24 laptop:mt-20 mt-10">
+          <div className=" ml-5 flex items-center justify-between" >
             <div className="">
               <h1
                 ref={textOne}
-                className="text-l tablet:text-4xl laptop:text-5xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
               <h1
                 ref={textTwo}
-                className="text-xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-2xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineTwo}
               </h1>
               <h1
                 ref={textThree}
-                className="text-xs tablet:text-2xl laptop:text-3xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-sm tablet:text-2xl laptop:text-3xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineThree}
               </h1>
-              <h1
-                ref={textFour}
-                className="text-2xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
-              >
-                {data.headerTaglineFour}
-              </h1>
+
             </div>
             <div className="z-1 ">
-              <Spline></Spline> 
             </div>
             
           </div>
 
         
         </div>
-        
-        </div>
-        <div className="w-full">
+        <div className="w-full absolute inset-x-0 top-16 h-16">
           <Line></Line> 
         </div>
+        </div>
+        
         <div className="mt-80 laptop:mt-30 p-2 laptop:p-0" ref={aboutRef}>
         <h1 className="text-2xl text-bold"></h1>
 
