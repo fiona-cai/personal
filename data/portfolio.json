@@ -1,1 +1,142 @@
-{"name":"Fiona Cai","headerTaglineOne":"Hello there,","headerTaglineTwo":"I'm Fiona.","headerTaglineThree":"Toronto, ON","headerTaglineFour":"","showCursor":false,"showBlog":true,"darkMode":false,"showResume":true,"socials":[{"id":"1","title":"Github","link":"https://github.com/fiona-cai"},{"id":"2","title":"LinkedIn","link":"https://www.linkedin.com/in/fiona--cai/"},{"id":"4","title":"Medium","link":"https://medium.com/@fiona-cai"},{"id":"5","title":"Email","link":"mailto:fiona.cai899@gmail.com"}],"projects":[{"id":"1","title":"Project One Test","description":"Web Design","imageSrc":"https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":""},{"id":"2","title":"Project Two","description":"Web Development","imageSrc":"https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"3","title":"Project Three","description":"Design","imageSrc":"https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"4","title":"Project Four","description":"Marketing","imageSrc":"https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"5","title":"Project Five","description":"Development","imageSrc":"https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"6","title":"Project Six","description":"Design & Development","imageSrc":"https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"}],"services":[{"id":"1","title":"Art Direction","description":"We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."},{"id":"2","title":"Branding","description":"We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."},{"id":"3","title":"Web Design","description":"We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."},{"id":"4","title":"3D Design","description":"We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."}],"aboutpara":"Developing websites, staying awake at hackathons, performing at retirement homes, launching rockets, organizing school events, singing at coffeehouses, and designing things - wherever, and whenever.","resume":{"tagline":"coming soon","description":"coming soon","experiences":[{"id":"1","dates":"coming soon","type":"coming soon","position":"coming soon","bullets":"coming soon"},{"id":"d495c23b-4f65-479a-9b8a-cfbc1c089725","dates":"coming soon","type":"coming soon","position":"coming soon","bullets":"coming soon"}],"education":{"universityName":"coming soon","universityDate":"coming soon","universityPara":"coming soon"},"languages":["Javascript","HTML5","CSS","Python","Go"],"frameworks":["React","Typescript","NodeJs"],"others":["Figma","AdobeXD","AWS"]}}
+{
+    "name": "Fiona Cai",
+    "headerTaglineOne": "Hey there,",
+    "headerTaglineTwo": "I'm Fiona.",
+    "headerTaglineThree": "Toronto, ON",
+    "headerTaglineFour": "",
+    "showCursor": false,
+    "showBlog": true,
+    "darkMode": false,
+    "showResume": true,
+    "socials": [
+        {
+            "id": "1",
+            "title": "Github",
+            "link": "https://github.com/fiona-cai"
+        },
+        {
+            "id": "2",
+            "title": "LinkedIn",
+            "link": "https://www.linkedin.com/in/fiona--cai/"
+        },
+        {
+            "id": "4",
+            "title": "Medium",
+            "link": "https://medium.com/@fiona-cai"
+        },
+        {
+            "id": "5",
+            "title": "Email",
+            "link": "mailto:fiona.cai899@gmail.com"
+        }
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Project One Test",
+            "description": "Web Design",
+            "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "url": ""
+        },
+        {
+            "id": "2",
+            "title": "Project Two",
+            "description": "Web Development",
+            "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
+            "url": "http://chetanverma.com/"
+        },
+        {
+            "id": "3",
+            "title": "Project Three",
+            "description": "Design",
+            "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "url": "http://chetanverma.com/"
+        },
+        {
+            "id": "4",
+            "title": "Project Four",
+            "description": "Marketing",
+            "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "url": "http://chetanverma.com/"
+        },
+        {
+            "id": "5",
+            "title": "Project Five",
+            "description": "Development",
+            "imageSrc": "https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+            "url": "http://chetanverma.com/"
+        },
+        {
+            "id": "6",
+            "title": "Project Six",
+            "description": "Design & Development",
+            "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
+            "url": "http://chetanverma.com/"
+        }
+    ],
+    "services": [
+        {
+            "id": "1",
+            "title": "Art Direction",
+            "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+        },
+        {
+            "id": "2",
+            "title": "Branding",
+            "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+        },
+        {
+            "id": "3",
+            "title": "Web Design",
+            "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+        },
+        {
+            "id": "4",
+            "title": "3D Design",
+            "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+        }
+    ],
+    "aboutpara": "Developing websites, staying awake at hackathons, performing at retirement homes, launching rockets, organizing school events, singing at coffeehouses, and designing things - wherever, and whenever.",
+    "resume": {
+        "tagline": "coming soon",
+        "description": "coming soon",
+        "experiences": [
+            {
+                "id": "1",
+                "dates": "coming soon",
+                "type": "coming soon",
+                "position": "coming soon",
+                "bullets": "coming soon"
+            },
+            {
+                "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
+                "dates": "coming soon",
+                "type": "coming soon",
+                "position": "coming soon",
+                "bullets": "coming soon"
+            }
+        ],
+        "education": {
+            "universityName": "coming soon",
+            "universityDate": "coming soon",
+            "universityPara": "coming soon"
+        },
+        "languages": [
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "Python",
+            "Go"
+        ],
+        "frameworks": [
+            "React",
+            "Typescript",
+            "NodeJs"
+        ],
+        "others": [
+            "Figma",
+            "AdobeXD",
+            "AWS"
+        ]
+    }
+}
