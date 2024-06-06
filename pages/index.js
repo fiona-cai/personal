@@ -72,18 +72,18 @@ export default function Home() {
         />
       <div className="">
         
-        <div className="mx-24 laptop:mt-20 mt-10">
+        <div className="mx-8 laptop:mt-20 mt-10 mx-24 ">
           <div className=" ml-5 flex items-center justify-between" >
             <div className="">
               <h1
                 ref={textOne}
-                className="text-xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-2xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
               <h1
                 ref={textTwo}
-                className="text-2xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-4xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineTwo}
               </h1>
@@ -102,12 +102,12 @@ export default function Home() {
 
         
         </div>
-        <div className="w-full absolute inset-x-0 top-16 h-16">
+        <div className="invisible tablet:visible top-16 inset-x-0 w-full absolute top-0">
           <Line></Line> 
         </div>
         </div>
         
-        <div className="mt-80 laptop:mt-30 p-2 laptop:p-0" ref={aboutRef}>
+        <div className="tablet:mt-80 laptop:mt-30 p-2 laptop:p-0" ref={aboutRef}>
         <h1 className="text-2xl text-bold"></h1>
 
           <div className="flex flex-wrap flex-row-reverse items-center justify-center	" >
