@@ -11,7 +11,11 @@ module.exports = {
       laptop: "840px",
       laptopl: "1600px",
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '128': '32rem', // following the standard of 128 / 4 = 32
+      }
+    },
   },
   plugins: [],
 };
