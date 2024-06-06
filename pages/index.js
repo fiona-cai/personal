@@ -72,7 +72,7 @@ export default function Home() {
         />
       <div className="">
         
-        <div className="mx-8 laptop:mt-20 mt-10 mx-24 ">
+        <div className="mx-8 laptop:mt-20 mt-10 mx-32 ">
           <div className=" ml-5 flex items-center justify-between" >
             <div className="">
               <h1
@@ -102,12 +102,12 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-16 inset-x-0 w-full absolute top-0">
+        <div className="invisible tablet:visible top-24 inset-x-0 w-full absolute top-0">
           <Line></Line> 
         </div>
         </div>
         
-        <div className="tablet:mt-80 laptop:mt-30 p-2 laptop:p-0" ref={aboutRef}>
+        <div className="tablet:mt-96 laptop:mt-30 p-2 laptop:p-0" ref={aboutRef}>
         <h1 className="text-2xl text-bold"></h1>
 
           <div className="flex flex-wrap flex-row-reverse items-center justify-center	" >
