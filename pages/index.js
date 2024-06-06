@@ -102,16 +102,16 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-40 inset-x-0 w-full absolute top-0">
+        <div className="invisible tablet:visible top-32 inset-x-0 w-full absolute top-0 laptop:top-40">
           <Line></Line> 
         </div>
         </div>
         
         <div className="tablet:mt-96 laptop:mt-128 p-2 laptop:p-0" ref={aboutRef}>
-        <h1 className="text-center text-2xl text-bold">About</h1>
+        <h1 className="text-center text-4xl text-bold">About</h1>
 
           <div className="flex flex-wrap flex-row-reverse items-center justify-center	" >
-            <p className="m-10 text-xl mob:w-full tablet:w-1/2 laptop:text-2xl w-full ">
+            <p className="m-10 text-xl mob:w-full tablet:w-1/2 laptop:text-xl w-full ">
               {data.aboutpara}
             </p>
             <Image className="object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243vw" height="162vw" layout="intrinsic"/>
@@ -121,7 +121,7 @@ export default function Home() {
 
         <div className="mt-40 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
-          <h1 className="text-center text-2xl text-bold">Work</h1>
+          <h1 className="text-center text-4xl text-bold">Work</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
