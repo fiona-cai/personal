@@ -102,7 +102,7 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-36 inset-x-0 w-full absolute top-0">
+        <div className="invisible tablet:visible top-40 inset-x-0 w-full absolute top-0">
           <Line></Line> 
         </div>
         </div>
