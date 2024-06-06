@@ -73,7 +73,7 @@ export default function Home() {
       <div className="">
         
         <div className="mx-8 laptop:mt-20 mt-10 mx-32 ">
-          <div className=" ml-5 flex items-center justify-between" >
+          <div className=" mt-24 ml-5 flex items-center justify-between" >
             <div className="">
               <h1
                 ref={textOne}
@@ -102,7 +102,7 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-24 inset-x-0 w-full absolute top-0">
+        <div className="invisible tablet:visible top-32 inset-x-0 w-full absolute top-0">
           <Line></Line> 
         </div>
         </div>
