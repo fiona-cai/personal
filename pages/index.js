@@ -102,13 +102,13 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-48 inset-x-0 w-full absolute top-0">
+        <div className="invisible tablet:visible top-40 inset-x-0 w-full absolute top-0">
           <Line></Line> 
         </div>
         </div>
         
         <div className="tablet:mt-96 laptop:mt-128 p-2 laptop:p-0" ref={aboutRef}>
-        <h1 className="text-2xl text-bold"></h1>
+        <h1 className="text-center text-2xl text-bold">About</h1>
 
           <div className="flex flex-wrap flex-row-reverse items-center justify-center	" >
             <p className="m-10 text-xl mob:w-full tablet:w-1/2 laptop:text-2xl w-full ">
