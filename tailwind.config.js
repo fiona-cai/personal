@@ -13,7 +13,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '128': '32rem', // following the standard of 128 / 4 = 32
+        '108': '27rem',
+        '120': '30rem', // following the standard of 128 / 4 = 32
       }
     },
   },

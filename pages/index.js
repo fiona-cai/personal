@@ -72,24 +72,24 @@ export default function Home() {
         />
       <div className="">
         
-        <div className="mx-8 laptop:mt-20 mt-10 mx-32 ">
-          <div className=" mt-24 ml-5 flex items-center justify-between" >
+        <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-32 ">
+          <div className=" ml-2 mt-24 flex items-center justify-between tablet:ml-5" >
             <div className="">
               <h1
                 ref={textOne}
-                className="text-2xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-4xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
               <h1
                 ref={textTwo}
-                className="text-4xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-5xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineTwo}
               </h1>
               <h1
                 ref={textThree}
-                className="text-sm tablet:text-2xl laptop:text-3xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-l tablet:text-2xl laptop:text-3xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineThree}
               </h1>
@@ -102,26 +102,26 @@ export default function Home() {
 
         
         </div>
-        <div className="invisible tablet:visible top-32 inset-x-0 w-full absolute top-0 laptop:top-40">
+        <div className=" tablet: inset-x-0 w-full absolute top-0 laptop:top-40">
           <Line></Line> 
         </div>
         </div>
         
-        <div className="tablet:mt-96 laptop:mt-128 p-2 laptop:p-0" ref={aboutRef}>
-        <h1 className="text-center text-4xl text-bold">About</h1>
+        <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef}>
+        <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">About</h1>
 
-          <div className="flex flex-wrap flex-row-reverse items-center justify-center	" >
-            <p className="m-10 text-xl mob:w-full tablet:w-1/2 laptop:text-xl w-full ">
+          <div className="flex flex-wrap  items-center justify-center	" >
+            <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243vw" height="162vw" layout="intrinsic"/>
+            <p className="m-10 text-l  mob:w-full text-left tablet:w-2/5  text-l laptop:text-xl w-full ">
               {data.aboutpara}
             </p>
-            <Image className="object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243vw" height="162vw" layout="intrinsic"/>
 
           </div>
         
 
-        <div className="mt-40 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+        <div className="mt-40 mx-8 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
-          <h1 className="text-center text-4xl text-bold">Work</h1>
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl">Work</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -136,8 +136,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+        <div className="mt-40 laptop:mt-30 p-2 laptop:p-0">
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl">Services</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -148,6 +148,8 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <p className="">I started this site on June 4 ;-; it'll be done eventually!</p>
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
