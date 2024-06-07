@@ -149,7 +149,7 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="">I started this site on June 4 ;-; it'll be done eventually!</p>
+        <p className="">I started this site on June 4 ;-; it will be done eventually!</p>
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
