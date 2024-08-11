@@ -53,11 +53,15 @@ const Edit = () => {
     });
   };
 
-  const deleteProject = (id) => {
-    const copyProjects = data.projects;
-    copyProjects = copyProjects.filter((project) => project.id !== id);
-    setData({ ...data, projects: copyProjects });
-  };
+let deleteProject = (id) => {
+  let copyProjects = data.projects;
+  copyProjects = copyProjects.filter((project) => project.id !== id);
+  setData({ ...data, projects: copyProjects });
+};
+
+
+
+
 
   // Services Handler
 
@@ -82,8 +86,8 @@ const Edit = () => {
     });
   };
 
-  const deleteService = (id) => {
-    const copyServices = data.services;
+  let deleteService = (id) => {
+    let copyServices = data.services;
     copyServices = copyServices.filter((service) => service.id !== id);
     setData({ ...data, services: copyServices });
   };
@@ -110,8 +114,8 @@ const Edit = () => {
     });
   };
 
-  const deleteSocials = (id) => {
-    const copySocials = data.socials;
+  let deleteSocials = (id) => {
+    let copySocials = data.socials;
     copySocials = copySocials.filter((social) => social.id !== id);
     setData({ ...data, socials: copySocials });
   };
@@ -374,9 +378,27 @@ const Edit = () => {
                   </div>
                   <div className="flex items-center mt-2">
                     <label className="w-1/5 text-lg opacity-50">
+                      Headline
+                    </label>
+            
+                    <input
+                      value={project.headline}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          headline: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2  rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">
                       Description
                     </label>
-                    <input
+            
+                    <textarea
                       value={project.description}
                       onChange={(e) =>
                         editProjects(index, {
@@ -384,9 +406,9 @@ const Edit = () => {
                           description: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 ml-10 p-2 h-96  rounded-md shadow-lg border-2"
                       type="text"
-                    ></input>
+                    ></textarea>
                   </div>
                   <div className="flex items-center mt-2">
                     <label className="w-1/5 text-lg opacity-50">

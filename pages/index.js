@@ -108,11 +108,11 @@ export default function Home() {
         </div>
         
         <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef}>
-        <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">About</h1>
+        <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">i like to code</h1>
 
           <div className="flex flex-wrap  items-center justify-center	" >
-            <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243vw" height="162vw" layout="intrinsic"/>
-            <p className="m-10 text-l  mob:w-full text-left tablet:w-2/5  text-l laptop:text-xl w-full ">
+            <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243" height="162" layout="intrinsic"/>
+            <p className="m-10 font-light	 text-base  mob:w-full text-left tablet:w-2/5  text-base laptop:text-base w-full ">
               {data.aboutpara}
             </p>
 
@@ -121,7 +121,7 @@ export default function Home() {
 
         <div className="mt-40 mx-8 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl">Work</h1>
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl">my work</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -129,6 +129,7 @@ export default function Home() {
                 key={project.id}
                 img={project.imageSrc}
                 name={project.title}
+                headline={project.headline}
                 description={project.description}
                 onClick={() => window.open(project.url)}
               />

@@ -6,6 +6,7 @@ export default function App() {
       <div>
         <Spline
           scene="https://prod.spline.design/ezzyfloSRqbCqSzy/scene.splinecode" 
+
         />
       </div>
     );
