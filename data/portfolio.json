@@ -43,7 +43,7 @@
             "id": "2",
             "title": "Team Swordfish",
             "description": "(Best Technical + Best Scientific Mission)\n\nIn the CanSat Design Challenge, teams students design a “satellite” which is the size of a pop can in Lethbridge, Alberta. The CanSat is launched by high-powered amateur rockets (or carried by a drone) to a height of up to one kilometer, and conducts its experiments as it descends.\n\nOur CanSat used Terrain Relative Navigation to precisely track its position and attitude using only an onboard camera and inertial navigation system. This is necessary in environments where GPS is not available, like the Moon. \n\nAfter the competition, we were invited on the show \"Ask an Astronomer\".",
-            "imageSrc": "/images/DSC00630.jpg",
+            "imageSrc": "/images/Screen Shot 2024-08-11 at 9.24.57 PM.png",
             "url": "https://www.instagram.com/team__swordfish/",
             "headline": "Canadian CanSat 🚀 Design Challenge"
         },
