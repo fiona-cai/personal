@@ -102,7 +102,7 @@ export default function Home() {
 
         
         </div>
-        <div className=" tablet: inset-x-0 w-full absolute top-0 laptop:top-40">
+        <div className="inset-x-0 w-full absolute top-0 laptop:top-20">
           <Line></Line> 
         </div>
         </div>
