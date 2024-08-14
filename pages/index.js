@@ -77,7 +77,7 @@ export default function Home() {
             <div className="">
               <h1
                 ref={textOne}
-                className="text-4xl tablet:text-5xl laptop:text-6xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
@@ -123,7 +123,7 @@ export default function Home() {
           
           <h1 className="text-center text-2xl text-bold tablet:text-4xl">my work</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
