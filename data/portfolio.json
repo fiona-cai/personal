@@ -32,7 +32,6 @@
     ],
     "projects": [
         {
-            "id": "1",
             "title": "Signematic",
             "headline": "2nd Place 🏆 at JAMHacks 8",
             "description": "JAMHacks is one of Canada’s largest high school hackathons based out of the University of Waterloo with 150+ high school hackers. Our submission, Signematic, aims to provide live sign language transcription for videos and movies using advanced machine-learning algorithms and gesture models. Our solution ensures that the deaf and hard-of-hearing community can enjoy a seamless viewing experience with accurate and real-time sign language interpretation.",
@@ -40,7 +39,6 @@
             "url": "https://dorahacks.io/buidl/13405"
         },
         {
-            "id": "2",
             "title": "Team Swordfish",
             "description": "(Best Technical + Best Scientific Mission)\n\nIn the CanSat Design Challenge, teams students design a “satellite” which is the size of a pop can in Lethbridge, Alberta. The CanSat is launched by high-powered amateur rockets (or carried by a drone) to a height of up to one kilometer, and conducts its experiments as it descends.\n\nOur CanSat used Terrain Relative Navigation to precisely track its position and attitude using only an onboard camera and inertial navigation system. This is necessary in environments where GPS is not available, like the Moon. \n\nAfter the competition, we were invited on the show \"Ask an Astronomer\".",
             "imageSrc": "/images/Screen Shot 2024-08-11 at 9.24.57 PM.png",
@@ -48,15 +46,6 @@
             "headline": "Canadian CanSat 🚀 Design Challenge"
         },
         {
-            "id": "e4610d95-c573-4851-93bf-c7f15d040b59",
-            "title": "Codebuds",
-            "description": "Founder + Executive Director and now Board Director - Codebuds is an innovative non-profit organization, driven by a passionate team of young leaders who are committed to transforming the future of technology. Lead a team of 17 in writing a computing contest with 100+ attendees and hackathon with 70+ attendees. Built up platforms to reach 25,000+ students (10,000+ impressions on Instagram) with collaborations (i.e.\nattending Ignite Fair by Volunteer Toronto), and distributing $100,000+ worth of prizes within 4 months.",
-            "imageSrc": "https://ugc.production.linktr.ee/3545c3a3-6ba7-4039-b59a-bf727489ff85_codebudslogos-02.png?io=true&size=avatar-v3_0",
-            "url": "https://www.linkedin.com/company/codebudscanada/",
-            "headline": "Non-Profit Organization  🌱"
-        },
-        {
-            "id": "2dfb7e79-9715-41f6-9177-5f57c5235a7c",
             "title": "YRHacks",
             "description": "Co-Lead Organizer of 2 iterations (YRHacks 4 & 5) and Executive of YRHacks 3 - YRHacks is the official annual hackathon of the York Region District School\nBoard, supported by the Specialist High Skills Major (SHSM) program. Our\nmission is to create a welcoming and exciting hackathon experience for high\nschool students of all strengths and skill levels. We facilitate participants to\ngather in teams to create projects, as well as attend workshops and social\ngatherings.\nYRHacks is an environment for students to come together and experiment with\ntheir creative ideas. Each year we welcome around 300 students to our hackathon.",
             "imageSrc": "https://yrhacks.ca/assets/logos/logo-transparent.svg",
@@ -64,7 +53,13 @@
             "headline": "Offical YRDSB Hackathon"
         },
         {
-            "id": "74d57479-dd46-47c7-9ca6-cb687aa96796",
+            "title": "Codebuds",
+            "description": "Founder + Executive Director and now Board Director - Codebuds was an innovative non-profit organization, driven by a passionate team of young leaders who are committed to transforming the future of technology. Lead a team of 17 in writing a computing contest with 100+ attendees and hackathon with 70+ attendees. Built up platforms to reach 25,000+ students (10,000+ impressions on Instagram) with collaborations (i.e.\nattending Ignite Fair by Volunteer Toronto), and distributing $100,000+ worth of prizes within 4 months.",
+            "imageSrc": "https://ugc.production.linktr.ee/3545c3a3-6ba7-4039-b59a-bf727489ff85_codebudslogos-02.png?io=true&size=avatar-v3_0",
+            "url": "https://www.linkedin.com/company/codebudscanada/",
+            "headline": "Non-Profit Organization  🌱"
+        },
+        {
             "title": "Rhino's Quest",
             "description": "You play as Racket the Rhino, an endangered Javan Rhino, who fights back against deforestation and shoots Awake™ Bars at the humans invading his home with his trusty catapult. Navigate the levels with your custom-built controller in hand.\n\nBy advancing through multiple levels, fighting back against hordes of CS students, and discovering the evil prof's lab, you'll save the world and restore it to its natural order.",
             "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/620/369/datas/gallery.jpg",
@@ -72,7 +67,20 @@
             "headline": "Platform Game with 3D Controller"
         },
         {
-            "id": "3",
+            "title": "TrackBack",
+            "headline": "Memory Assistant for Seniors with Dementia",
+            "description": "TrackBack helps seniors navigate memory loss by leveraging object detection with YOLOv4 to track and log everyday items. Users can search for misplaced objects through a conversational web app interface powered by Voiceflow's LLM, which retrieves the object's location, bounding box, and prominent color from recorded footage. TrackBack features an intuitive UI designed for ease of use by seniors, focusing on simple chat-based interactions.",
+            "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/003/022/384/datas/medium.png",
+            "url": "https://devpost.com/software/trackback"
+        },
+        {
+            "title": "Homework Run",
+            "headline": "Augmented Reality Game",
+            "description": "Homework Run is an augmented reality game that motivates players to stay active while dodging obstacles and answering trivia questions. By tracking body movements through the player's webcam, the game challenges users to avoid obstacles like cellphones and Instagram icons. Collisions prompt true-false questions on a chosen topic, adding an educational twist. The game uses OpenCV for motion detection, MediaPipe for pose tracking, and OpenAI’s GPT-3.5 for generating trivia questions, creating a fun way to blend learning with physical activity.",
+            "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/993/672/datas/gallery.jpg",
+            "url": "https://devpost.com/software/homework-run"
+        },                       
+        {
             "title": "VocalAI",
             "headline": "Karaoke App",
             "description": "VocalAI includes two main features:\n\nKaraoke Creation: Converts any song into a karaoke track that matches the original composition.\nSpeech Recognition & Pitch Scoring: Analyzes vocal delivery for accurate pronunciation and pitch, providing real-time feedback and scoring.\nThese tools offer personalized guidance and track progress to help improve singing abilities.",
@@ -80,7 +88,6 @@
             "url": "https://devpost.com/software/vocalai"
         },
         {
-            "id": "4",
             "title": "CrisisControl",
             "headline": "Solution to a GreenHouse issue",
             "description": "CrisisControl parses emergency disaster phone calls to improve dispatchers' accuracy and speed in assessing the situation and properly requisitioning emergency responders.\n\nWhen a call is ended, the transcription of the call is parsed and analyzed to provide a concise overview for the dispatcher to review, verify, and dispatch responders, who receive a brief overview on their screens.",
@@ -88,7 +95,6 @@
             "url": "https://devpost.com/software/crisiscontrol"
         },
         {
-            "id": "4",
             "title": "Bayview StuCo",
             "headline": "My School's Student Council",
             "description": "I first joined the council in grade 9 and I've been re-elected to basically the same position ever since. My role has always been spearheading the outreach team, and much of my attention was always spent on the school website. Many of my best high school experiences from grade 9 all the way to grade 12 have been from serving in student council, representing 2100+ students.",

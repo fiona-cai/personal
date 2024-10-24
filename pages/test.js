@@ -1,24 +1,15 @@
-import { useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from '@react-three/fiber';
+import { LinkedInEmbed } from 'react-social-media-embed';
 
-function Model({ url }) {
-  const gltf = useLoader(GLTFLoader, url);
-  const ref = useRef();
-  useFrame((state) => {
-    const scrollY = state.viewport.scroll;
-    ref.current.rotation.y = scrollY * 0.1;
-  });
-  return <primitive object={gltf.scene} ref={ref} />;
-}
 
-export default function Home() {
+export default function Home({ linkedInPosts }) {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Model url="/scene.glb" />
-    </Canvas>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <LinkedInEmbed 
+        url="https://www.linkedin.com/embed/feed/update/urn:li:share:6898694772484112384"
+        postUrl="https://www.linkedin.com/posts/peterdiamandis_5-discoveries-the-james-webb-telescope-will-activity-6898694773406875648-z-D7"
+        width={325}
+        height={570} 
+      />
+    </div>
   );
 }

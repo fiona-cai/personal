@@ -121,7 +121,7 @@ export default function Home() {
 
         <div className="mt-40 mx-8 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl">my work</h1>
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl">my projects</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8">
             {data.projects.map((project) => (
@@ -136,6 +136,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        
 
        
 
