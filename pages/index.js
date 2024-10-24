@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
-import Cursor from "../components/Cursor";
 import Spline from "../components/Spline";
 import Line from "../components/Line";
 
@@ -58,8 +57,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div className={`relative `}>
       <Head>
         <title className="z-100">{data.name}</title>
       </Head>
