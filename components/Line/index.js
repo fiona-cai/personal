@@ -48,7 +48,7 @@ export default function App() {
           src="/line.mp4"
           autoPlay={videoPlaying} // Control autoPlay with the state
           muted
-          loop
+          loop={false}
           playsInline // Ensure the video plays inline on mobile
           style={{
             width: '100vw',
