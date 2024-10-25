@@ -21,149 +21,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
   return (
     <>
-      <Popover className="block tablet:hidden mt-5">
-        {({ open }) => (
-          <>
-            <div className="flex items-center justify-between p-2 laptop:p-0">
-              <h1
-                onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
-              >
-                {name}
-              </h1>
 
-              <div className="flex items-center">
-                {data.darkMode && (
-                  <Button
-                    onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
-                    }
-                  >
-                    <img
-                      className="h-6"
-                      src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
-                    ></img>
-                  </Button>
-                )}
-
-                <Popover.Button>
-                  <img
-                    className="h-5"
-                    src={`/images/${
-                      !open
-                        ? theme === "dark"
-                          ? "menu-white.svg"
-                          : "menu.svg"
-                        : theme === "light"
-                        ? "cancel.svg"
-                        : "cancel-white.svg"
-                    }`}
-                  ></img>
-                </Popover.Button>
-              </div>
-            </div>
-            <Popover.Panel
-              className={`absolute right-0 z-10 w-1 p-4 ${
-                theme === "dark" ? "bg-slate-800" : "bg-white"
-              } shadow-md rounded-md`}
-            >
-              {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  <Button onClick={handleAboutScroll}>About</Button>
-                  <Button onClick={handleWorkScroll}>Work</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  
-                  <Button
-                    onClick={() => window.open("mailto:fiona.cai899@gmail.com")}
-                  >
-                    Contact
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Home
-                  </Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  
-
-                  <Button
-                    onClick={() => window.open("mailto:fiona.cai899@gmail.com")}
-                  >
-                    Contact
-                  </Button>
-                </div>
-              )}
-            </Popover.Panel>
-          </>
-        )}
-      </Popover>
-      <div
-        className={`m-0 px-20 py-2 w-full hidden flex-row items-center justify-between sticky z-60 bg-white ${
-          theme === "light" && "bg-white"
-        } dark:text-white top-0 z-30 tablet:flex flex-wrap-reverse`}
-      >
-        <h1
-          onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-        >
+      {/* Desktop Header */}
+      <div className="flex items-center justify-between p-5 bg-white ">
+        <h1 onClick={() => router.push("/")} className="cursor-pointer text-xl font-medium">
           {name}
         </h1>
-        {!isBlog ? (
-          <div className="flex">
-            <Button onClick={handleAboutScroll}>About</Button>
-            <Button onClick={handleWorkScroll}>Work</Button>
-            {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
-            )}
-            
-
-            <Button onClick={() => window.open("mailto:fiona.cai899@gmail.com")}>
-              Contact
-            </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
-          </div>
-        ) : (
-          <div className="flex">
-            <Button onClick={() => router.push("/")}>Home</Button>
-            {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
-            )}
-            
-
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
-              Contact
-            </Button>
-
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
-          </div>
-        )}
-      </div>
-    </>
+        <div className="flex items-center space-x-4">
+          <Button onClick={handleAboutScroll}>About</Button>
+          <Button onClick={handleWorkScroll}>Work</Button>
+          {showBlog && <Button onClick={() => router.push("/blog")}>Blog</Button>}
+        </div>
+      </div>    
+      </>
   );
 };
 
