@@ -17,14 +17,12 @@ export default function App() {
 
     // Add an event listener for window resize
     window.addEventListener('resize', checkScreenSize);
-
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Start playing the video if it's small screen and not already playing
+      // Play video only if on small screen and not already playing
       if (isSmallScreen && !videoPlaying) {
         setVideoPlaying(true);
         if (videoRef.current) {
@@ -35,8 +33,6 @@ export default function App() {
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the scroll event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isSmallScreen, videoPlaying]);
 
@@ -62,7 +58,6 @@ export default function App() {
           <video
             ref={videoRef} // Attach the ref to the video element
             src="/line.mp4"
-            autoPlay={videoPlaying} // Control autoPlay with the state
             muted
             loop
             playsInline // Ensure the video plays inline on mobile
