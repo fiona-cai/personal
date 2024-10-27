@@ -11,6 +11,7 @@ import Button from "../components/Button";
 import Link from "next/link";
 import Spline from "../components/Spline";
 import Line from "../components/Line";
+import Skills from "../components/Skills";
 
 import Image from 'next/image'
 
@@ -65,11 +66,11 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
+        handleWorkScroll={handleWorkScroll}
+        handleAboutScroll={handleAboutScroll}
+      />
       <div className="">
-        
+
         <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-32 ">
           <div className=" ml-2 mt-24 flex items-center justify-between tablet:ml-5" >
             <div className="">
@@ -95,31 +96,33 @@ export default function Home() {
             </div>
             <div className="z-1 ">
             </div>
-            
+
           </div>
 
-        
+
         </div>
         <div className="inset-x-0 w-full absolute top-0 laptop:top-20">
-          <Line></Line> 
+          <Line></Line>
         </div>
-        </div>
-        
-        <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef}>
+      </div>
+
+      <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef}>
         <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">i like to code</h1>
 
-          <div className="flex flex-wrap  items-center justify-center	" >
-            <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243" height="162" layout="intrinsic"/>
-            <p className="m-10 font-light	 text-base  mob:w-full text-left tablet:w-2/5  text-base laptop:text-base w-full ">
-              {data.aboutpara}
-            </p>
-
+        <div className="flex flex-wrap  items-center justify-center	" >
+          <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243" height="162" layout="intrinsic" />
+          <p className="m-10 font-light	 text-base  mob:w-full text-left tablet:w-2/5  text-base laptop:text-base w-full ">
+            {data.aboutpara}
+          </p>
+          <div className="mt-24">
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">skills & frameworks</h1>
+            <Skills />
           </div>
-        
+        </div>
 
-        <div className="mt-40 mx-8 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl">my projects</h1>
+        <div className="mt-32 mx-8 laptop:mt-24 p-2 laptop:p-0" ref={workRef}>
+
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl">my work</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8">
             {data.projects.map((project) => (
@@ -134,9 +137,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-        
 
-       
+
+
 
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
@@ -146,7 +149,7 @@ export default function Home() {
             </Link>
           </div>
         )}
-        
+
         <Footer />
       </div>
     </div>
