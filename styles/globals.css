@@ -20,12 +20,13 @@ body {
   pointer-events: none;
   z-index: 100;
   top: -15px;
-  right: 300px;
+  right: 450px;
   height: 100px;
   rotate: -20deg;
   width: 100vw;
   opacity: 1;
   filter: blur(180px);
+  -webkit-backdrop-filter: blur(180px);
   background: radial-gradient(
     circle,
     #7EE562 0%,
