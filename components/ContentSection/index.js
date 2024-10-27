@@ -2,6 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import styles from "./ContentSection.module.css"; // Importing the CSS module
 
 const CodeBlock = {
   code({ node, inline, className, children, ...props }) {
@@ -24,10 +25,13 @@ const CodeBlock = {
 };
 
 const ContentSection = ({ content }) => {
+  // Combine class names into one string
   return (
-    <ReactMarkdown components={CodeBlock} className="markdown-class">
-      {content}
-    </ReactMarkdown>
+    <div className={styles.markdownClass}>
+      <ReactMarkdown components={CodeBlock} className="markdown-class">
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 };
 

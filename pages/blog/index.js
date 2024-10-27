@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import data from "../../data/portfolio.json";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
+
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
   const text = useRef();
@@ -26,6 +27,66 @@ const Blog = ({ posts }) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Define the handleAboutScroll function
+  const handleAboutScroll = () => {
+    if (router.pathname !== "/") {
+      // If not on the homepage, go back to the homepage
+      router.push("/").then(() => {
+        setTimeout(() => {
+          const aboutSection = document.getElementById("about");
+          if (aboutSection) {
+            // Scroll to the About section after navigating
+            window.scrollTo({
+              top: aboutSection.offsetTop,
+              left: 0,
+              behavior: "smooth",
+            });
+          }
+        }, 100); // Delay to ensure the page has loaded
+      });
+    } else {
+      // Scroll to the About section if on the homepage
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        window.scrollTo({
+          top: aboutSection.offsetTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+  // Define the handleWorkScroll function
+  const handleWorkScroll = () => {
+    if (router.pathname !== "/") {
+      // If not on the homepage, go back to the homepage
+      router.push("/").then(() => {
+        setTimeout(() => {
+          const workSection = document.getElementById("work");
+          if (workSection) {
+            // Scroll to the Work section after navigating
+            window.scrollTo({
+              top: workSection.offsetTop,
+              left: 0,
+              behavior: "smooth",
+            });
+          }
+        }, 100); // Delay to ensure the page has loaded
+      });
+    } else {
+      // Scroll to the Work section if on the homepage
+      const workSection = document.getElementById("work");
+      if (workSection) {
+        window.scrollTo({
+          top: workSection.offsetTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   const createBlog = () => {
     if (process.env.NODE_ENV === "development") {
@@ -59,23 +120,28 @@ const Blog = ({ posts }) => {
       alert("This thing only works in development mode.");
     }
   };
+
   return (
     showBlog.current && (
       <>
         <Head>
           <title>Blog</title>
         </Head>
-        <div          
-        >
-          <Header isBlog={true}></Header>
+        <div className="gradient-circle"></div>
+        <div>
+          <Header 
+            isBlog={true} 
+            handleWorkScroll={handleWorkScroll} 
+            handleAboutScroll={handleAboutScroll} 
+          />
           <div className="mt-10">
             <h1
               ref={text}
-              className="mx-auto mob:p-2 text-bold text-6xl laptop:text-8xl w-full"
+              className="mx-auto mob:p-12 text-bold text-6xl laptop:text-8xl w-full"
             >
-              Blog.
+              my journey.
             </h1>
-            <div className="mt-10 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
+            <div className="mt-10 p-24 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
                   <div
@@ -132,6 +198,9 @@ export async function getStaticProps() {
     "author",
     "date",
   ]);
+
+  // Sort posts by date in descending order (most recent first)
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return {
     props: {

@@ -34,20 +34,36 @@ export default function Home() {
 
   // Handling Scroll
   const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    // Check if the current URL is not the homepage
+    if (window.location.pathname !== '/') {
+      // Navigate back to the homepage
+      window.location.href = '/'; // Change to your homepage URL if different
+    } else {
+      // If on the homepage, scroll to the about section
+      window.scrollTo({
+        top: workRef.current.offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
   };
+  
 
   const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    // Check if the current URL is not the homepage
+    if (window.location.pathname !== '/') {
+      // Navigate back to the homepage
+      window.location.href = '/'; // Change to your homepage URL if different
+    } else {
+      // If on the homepage, scroll to the about section
+      window.scrollTo({
+        top: aboutRef.current.offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
   };
+  
 
   useIsomorphicLayoutEffect(() => {
     stagger(
@@ -106,7 +122,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef}>
+      <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef} id="about">
         <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">i like to code</h1>
 
         <div className="flex flex-wrap  items-center justify-center	" >
@@ -120,7 +136,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-32 mx-8 laptop:mt-24 p-2 laptop:p-0" ref={workRef}>
+        <div className="mt-32 mx-8 laptop:mt-24 p-2 laptop:p-0" ref={workRef} id="work">
 
           <h1 className="text-center text-2xl text-bold tablet:text-4xl">my work</h1>
 

@@ -1,0 +1,13 @@
+
+.markdownClass strong {
+  font-weight: 500; /* Makes bold text less heavy */
+}
+
+.markdownClass blockquote {
+  text-align: center; /* Centers the quotes */
+  font-style: italic; /* Makes quotes italic for emphasis */
+  margin: 1.5rem 0; /* Adds vertical space around quotes */
+  padding: 0.5rem 1rem; /* Adds padding inside the quotes */
+  border-left: 4px solid #ccc; /* Optional: Adds a left border for visual appeal */
+  background-color: #f9f9f9; /* Optional: Light background color for quotes */
+}

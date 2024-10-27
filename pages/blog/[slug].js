@@ -28,10 +28,11 @@ const BlogPost = ({ post }) => {
         <meta name="description" content={post.preview} />
       </Head>
 
-      <div
+      <div 
 
       >
         <Header isBlog={true} />
+        <div className="p-12">
         <div className="mt-10 flex flex-col">
           <img
             className="w-full h-96 rounded-lg shadow-lg object-cover"
@@ -52,6 +53,7 @@ const BlogPost = ({ post }) => {
           </h2>
         </div>
         <ContentSection content={post.content}></ContentSection>
+        </div>
         <Footer />
       </div>
       {process.env.NODE_ENV === "development" && (

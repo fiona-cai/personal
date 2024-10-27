@@ -9,7 +9,7 @@ export default function handler(req, res) {
   if (process.env.NODE_ENV === "development") {
     if (req.method === "POST") {
       const data = matter.stringify("# New Blog", {
-        date: new Date().toISOString(),
+        date: new Date().toDateString(),
         title: "New Blog",
         tagline: "Amazing New Blog",
         preview:

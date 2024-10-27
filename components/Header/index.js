@@ -11,7 +11,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  setTheme("light");
+  // Set the theme to light by default
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
 
   const { name, showBlog, showResume } = data;
 
@@ -21,7 +24,6 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
   return (
     <>
-
       {/* Desktop Header */}
       <div className="flex items-center justify-between p-5 bg-white z-10">
         <h1 onClick={() => router.push("/")} className="cursor-pointer text-xl font-medium">
@@ -33,7 +35,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {showBlog && <Button onClick={() => router.push("/blog")}>Blog</Button>}
         </div>
       </div>    
-      </>
+    </>
   );
 };
 
