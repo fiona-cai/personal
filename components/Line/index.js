@@ -70,7 +70,6 @@ export default function App() {
               width: '100vw',
               height: '720px',
               objectFit: 'cover',
-              position: 'absolute',
             }}
           />
         </>
