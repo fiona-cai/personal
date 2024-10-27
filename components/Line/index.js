@@ -70,7 +70,7 @@ export default function App() {
               width: '100vw',
               height: '720px',
               objectFit: 'cover',
-              display: videoPlaying ? 'block' : 'none', // Hide video until it starts
+              position: 'absolute',
             }}
           />
         </>

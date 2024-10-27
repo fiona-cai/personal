@@ -2,35 +2,39 @@ import React from "react";
 import { useTheme } from "next-themes";
 import data from "../../data/portfolio.json";
 
-const Button = ({ children, type, onClick, classes }) => {
+const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   const { theme } = useTheme();
-  if (type === "primary") {
-    return (
-      <button
-        onClick={onClick}
-        type="button"
-        className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg ${
-          theme === "dark" ? "bg-white text-black" : "bg-black text-white"
-        }  transition-all duration-300 ease-out first:ml-0 hover:scale-105 active:scale-100 link ${
-          data.showCursor && "cursor-none"
-        }  ${classes}`}
-      >
-        {children}
-      </button>
-    );
-  }
+
+  const handleButtonClick = (e) => {
+    e.preventDefault(); // Prevents any default behavior on mobile
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  const baseClasses = "text-sm tablet:text-base p-2 m-1 rounded-lg transition-all duration-300 ease-out";
+  const scaleEffect = "hover:scale-105 active:scale-95"; // Tap-friendly scale effect
+  const cursorStyle = typeof window !== "undefined" && "ontouchstart" in window
+    ? "" // Avoid cursor-none on mobile
+    : data.showCursor ? "cursor-none" : "cursor-pointer";
+
+  // Theme-based styles for primary and secondary buttons
+  const primaryStyle = theme === "dark" ? "bg-white text-black" : "bg-black text-white";
+  const secondaryStyle = theme === "dark" ? "hover:bg-slate-600 text-white" : "hover:bg-slate-100 text-black";
+
   return (
     <button
-      onClick={onClick}
+      onClick={handleButtonClick}
+      onTouchStart={handleButtonClick} // Adds touch support
       type="button"
-      className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center transition-all ease-out duration-300 ${
-        theme === "dark"
-          ? "hover:bg-slate-600 text-white"
-          : "hover:bg-slate-100"
-      } hover:scale-105 active:scale-100  tablet:first:ml-0  ${
-        data.showCursor && "cursor-none"
-      } ${classes} link`}
+      className={`${baseClasses} ${type === "primary" ? primaryStyle : secondaryStyle} ${scaleEffect} ${cursorStyle} ${classes}`}
+      style={{
+        position: 'relative', // Ensures it’s positioned above other elements
+        zIndex: 10,            // Higher z-index for top-layer interaction
+      }}
     >
+      {/* Add Icon if provided */}
+      {Icon && <Icon className="mr-2" />} 
       {children}
     </button>
   );
