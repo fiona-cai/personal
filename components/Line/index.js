@@ -72,6 +72,12 @@ export default function App() {
               objectFit: 'cover',
               position: 'absolute',
               display: videoPlaying ? 'block' : 'none', // Hide video until it starts
+              zIndex: 0, // Ensure the video is behind the thumbnail
+            }}
+            onCanPlay={() => {
+              if (videoPlaying) {
+                videoRef.current.play();
+              }
             }}
           />
         </>
