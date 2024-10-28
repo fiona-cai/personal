@@ -137,11 +137,10 @@ const Blog = ({ posts }) => {
           <div className="mt-10">
             <h1
               ref={text}
-              className="mx-auto mob:p-12 text-bold text-6xl laptop:text-8xl w-full"
-            >
+              className="text-4xl text-center">
               my journey.
             </h1>
-            <div className="mt-10 p-24 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
+            <div className="mt-10 p-8 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
                   <div
@@ -154,8 +153,8 @@ const Blog = ({ posts }) => {
                       src={post.image}
                       alt={post.title}
                     ></img>
-                    <h2 className="mt-5 text-4xl">{post.title}</h2>
-                    <p className="mt-2 opacity-50 text-lg">{post.preview}</p>
+                    <h1 className="mt-5 text-3xl">{post.title}</h1>
+                    <p className="mt-2 opacity-50 text-sm">{post.preview}</p>
                     <span className="text-sm mt-5 opacity-25">
                       {ISOToDate(post.date)}
                     </span>

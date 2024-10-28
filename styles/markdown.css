@@ -3,80 +3,98 @@
 /* Markdown Container */
 
 .markdown-class {
-  @apply mt-5 p-5;
+  @apply mt-4 p-4 bg-white shadow-sm rounded-lg text-gray-800 leading-relaxed;
 }
 
 /* Headings */
 
 .markdown-class h1 {
-  @apply mt-5 text-3xl;
+  @apply mt-6 text-4xl font-bold text-gray-900 border-b-2 border-gray-300 pb-2;
 }
 .markdown-class h2 {
-  @apply mt-5 text-2xl;
+  @apply mt-5 text-3xl font-semibold text-gray-800 border-b border-gray-200 pb-1;
 }
 .markdown-class h3 {
-  @apply mt-5 text-xl;
+  @apply mt-5 text-2xl font-semibold text-gray-700;
 }
 .markdown-class h4 {
-  @apply mt-5 text-lg;
+  @apply mt-4 text-xl font-semibold text-gray-600;
 }
 .markdown-class h5 {
-  @apply mt-5 text-base;
+  @apply mt-4 text-lg font-medium text-gray-600;
 }
 .markdown-class h6 {
-  @apply mt-5 text-sm;
+  @apply mt-4 text-base font-medium text-gray-500;
 }
+
+/* Links */
 
 .markdown-class a {
-  @apply opacity-80 font-bold text-base underline transition-all duration-200 ease-out hover:opacity-100;
+  @apply text-blue-600 font-semibold underline transition-opacity duration-200 ease-out hover:opacity-90;
 }
+
+/* Paragraphs */
 
 .markdown-class p {
-  @apply mt-2 opacity-80 leading-7 font-normal text-base;
+  @apply mt-3 text-gray-700 leading-8 font-normal text-lg;
 }
+
+/* Emphasis */
 
 .markdown-class strong {
-  @apply font-extrabold;
+  @apply font-medium text-gray-900;
 }
+
+/* Horizontal Rule */
 
 .markdown-class hr {
-  @apply my-5;
+  @apply my-8 border-t border-gray-300;
 }
 
-
-
-/* Markdown Lists */
+/* Lists */
 
 .markdown-class ol {
-  @apply mt-5 ml-5;
+  @apply mt-6 ml-8 list-decimal list-inside;
 }
 
 .markdown-class ol li {
-  @apply text-base opacity-80 list-decimal;
+  @apply text-lg text-gray-700 leading-7 mb-2;
 }
 
 .markdown-class ul {
-  @apply mt-5 ml-5;
+  @apply mt-6 ml-8 list-disc list-inside;
 }
 
 .markdown-class ul li {
-  @apply text-base opacity-80 list-disc;
+  @apply text-lg text-gray-700 leading-7 mb-2;
 }
 
 /* BlockQuote */
 
 .markdown-class blockquote {
-  @apply p-5 border-l-8 rounded-lg shadow-lg  text-sm bg-slate-200 text-black;
+  @apply p-5 border-l-4 border-blue-400 rounded-lg shadow-md bg-blue-50 text-gray-800 italic;
 }
 
 .markdown-class blockquote p {
-  @apply text-black text-sm;
+  @apply text-gray-700 text-lg;
 }
-
-
 
 /* Image */
 
 .markdown-class img {
-  @apply max-h-96 w-full my-5 object-cover rounded-lg shadow-lg;
+  @apply max-h-96 w-full my-6 object-cover rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+}
+
+/* Code Block */
+
+.markdown-class pre {
+  @apply overflow-auto p-4 my-4 bg-gray-900 text-gray-100 rounded-lg shadow-inner;
+}
+
+.markdown-class code {
+  @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.markdown-class pre code {
+  @apply bg-transparent text-gray-100 text-base;
 }

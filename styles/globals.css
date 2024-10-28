@@ -8,6 +8,19 @@
   font-family: "Poppins";
 }
 
+@font-face {
+  font-family: "Chloe";
+  src: url("/fonts/Chloe-Regular.otf") format("truetype"); /* Adjust the path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Chloe", sans-serif; /* Use the font-family name you set */
+}
+
+
+
 body {
   @apply dark:bg-black dark:text-white;
   background-color: white;

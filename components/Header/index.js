@@ -26,9 +26,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     <>
       {/* Desktop Header */}
       <div className="flex items-center justify-between p-5 bg-white z-10">
-        <h1 onClick={() => router.push("/")} className="cursor-pointer text-xl font-medium">
-          {name}
-        </h1>
+        <h2 onClick={() => router.push("/")} className="cursor-pointer text-2xl font-medium">
+          {name.toLowerCase()}
+        </h2>
         <div className="flex items-center space-x-4">
           <Button onClick={handleAboutScroll}>About</Button>
           <Button onClick={handleWorkScroll}>Work</Button>

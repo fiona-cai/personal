@@ -9,9 +9,8 @@ import { stagger } from "../../animations";
 import Button from "../../components/Button";
 import BlogEditor from "../../components/BlogEditor";
 import { useRouter } from "next/router";
-import data from "../../data/portfolio.json";
 
-const BlogPost = ({ post }) => {
+const BlogPost = ({ post, previousPost }) => {
   const [showEditor, setShowEditor] = useState(false);
   const textOne = useRef();
   const textTwo = useRef();
@@ -28,34 +27,43 @@ const BlogPost = ({ post }) => {
         <meta name="description" content={post.preview} />
       </Head>
 
-      <div 
-
-      >
+      <div>
         <Header isBlog={true} />
-        <div className="p-12">
-        <div className="mt-10 flex flex-col">
+        <div className="p-6">
+          <div className="flex flex-col">
+            <h1
+              ref={textOne}
+              className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold"
+            >
+              {post.title}
+            </h1>
+            <h2
+              ref={textTwo}
+              className="mt-2 text-xl max-w-4xl text-darkgray opacity-50"
+            >
+              {post.tagline}
+            </h2>
+          </div>
           <img
-            className="w-full h-96 rounded-lg shadow-lg object-cover"
+            className="w-full mt-10 h-screen rounded-lg shadow-lg object-cover"
             src={post.image}
             alt={post.title}
           ></img>
-          <h1
-            ref={textOne}
-            className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold"
-          >
-            {post.title}
-          </h1>
-          <h2
-            ref={textTwo}
-            className="mt-2 text-xl max-w-4xl text-darkgray opacity-50"
-          >
-            {post.tagline}
-          </h2>
-        </div>
-        <ContentSection content={post.content}></ContentSection>
+          <ContentSection content={post.content}></ContentSection>
+
+          {/* Previous Blog Button */}
+          {previousPost && (
+            <button
+              onClick={() => router.push(`/blog/${previousPost.slug}`)}
+              className="mt-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md shadow-md"
+            >
+              Previous Blog: {previousPost.title}
+            </button>
+          )}
         </div>
         <Footer />
       </div>
+      
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
           <Button onClick={() => setShowEditor(true)} type={"primary"}>
@@ -82,16 +90,26 @@ export async function getStaticProps({ params }) {
     "preview",
     "title",
     "tagline",
-    "preview",
     "image",
     "content",
   ]);
+
+  // Get and sort all posts by date in descending order
+  const allPosts = getAllPosts(["slug", "date", "title"]).sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
+  // Find the previous post by checking if it has an earlier date than the current post
+  const previousPost = allPosts.find(
+    (p) => new Date(p.date) < new Date(post.date)
+  );
 
   return {
     props: {
       post: {
         ...post,
       },
+      previousPost: previousPost || null, // Pass the previous post as a prop, or null if none exists
     },
   };
 }
@@ -110,4 +128,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
 export default BlogPost;
