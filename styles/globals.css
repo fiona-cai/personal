@@ -22,8 +22,7 @@ h2 {
 
 
 body {
-  @apply dark:bg-black dark:text-white;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 100vw;
 }
 
@@ -31,19 +30,19 @@ body {
   overflow: hidden;
   position: absolute;
   pointer-events: none;
-  z-index: 100;
-  top: -15px;
+  z-index: 0;
+  top: -45px;
   right: 400px;
   height: 100px;
-  rotate: -20deg;
-  width: 100vw;
+  rotate: -12deg;
+  width: 120vw;
   opacity: 0.99;
   filter: blur(180px);
   -webkit-backdrop-filter: blur(180px);
   background: radial-gradient(
     circle,
-    #7EE562 0%,
-    #7ee5627c 100%
+    #33ff00 0%,
+    #33ff0074 100%
   );
 }
 
@@ -52,20 +51,42 @@ body {
   overflow: hidden;
   position: absolute;
   pointer-events: none;
-  z-index: -1;
-  top: 200px;
-  right: -200px;
-  height: 100px;
-  rotate: -80deg;
-  width: 50vw;
+  z-index: 0;
+  top: 100vh;
+  right: -150px;
+  height: 30vw;
+  rotate: -190deg;
+  width: 30vw;
   opacity: 0.5;
-  filter: blur(200px);
+  filter: blur(250px);
+  -webkit-backdrop-filter: blur(250px);
   background: radial-gradient(
     circle,
-    #7EE562 0%,
-    #7ee5627c 100%
+    #33ff00 0%,
+    #33ff0074 100%
   );
 }
+
+/* .gradient-circle3 {
+  overflow: hidden;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  top: 10px;
+  left: 40vw;
+  height: 30vw;
+  rotate: -190deg;
+  width: 30vw;
+  opacity: 0.2;
+  filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  background: radial-gradient(
+    circle,
+    #33ff00 0%,
+    #33ff0074 100%
+  );
+} */
+
 
 .gradient-circle-bottom {
   position: absolute;

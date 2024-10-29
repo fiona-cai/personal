@@ -27,9 +27,10 @@ const BlogPost = ({ post, previousPost }) => {
         <meta name="description" content={post.preview} />
       </Head>
 
-      <div>
+      <div className={`relative `}>
+          <div className="gradient-circle-bottom"></div>
         <Header isBlog={true} />
-        <div className="p-6">
+        <div className="p-[4%]">
           <div className="flex flex-col">
             <h1
               ref={textOne}
@@ -37,12 +38,12 @@ const BlogPost = ({ post, previousPost }) => {
             >
               {post.title}
             </h1>
-            <h2
+            <h3
               ref={textTwo}
               className="mt-2 text-xl max-w-4xl text-darkgray opacity-50"
             >
               {post.tagline}
-            </h2>
+            </h3>
           </div>
           <img
             className="w-full mt-10 h-screen rounded-lg shadow-lg object-cover"

@@ -7,6 +7,8 @@ import Header from "../../components/Header";
 import data from "../../data/portfolio.json";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
+import Footer from "../../components/Footer";
+
 
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
@@ -127,8 +129,11 @@ const Blog = ({ posts }) => {
         <Head>
           <title>Blog</title>
         </Head>
-        <div className="gradient-circle"></div>
-        <div>
+        
+        <div className={`relative `}>
+          <div className="gradient-circle2"></div>
+          <div className="gradient-circle3"></div>
+          <div className="gradient-circle-bottom"></div>
           <Header 
             isBlog={true} 
             handleWorkScroll={handleWorkScroll} 
@@ -138,18 +143,18 @@ const Blog = ({ posts }) => {
             <h1
               ref={text}
               className="text-4xl text-center">
-              my journey.
+              My Journey
             </h1>
             <div className="mt-10 p-8 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
                   <div
-                    className="relative"
+                    className="relative shadow-lg p-4 rounded-xl bg-white"
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
                     <img
-                      className="w-full h-60 rounded-lg shadow-lg object-cover"
+                      className="w-full h-60 rounded-lg object-cover"
                       src={post.image}
                       alt={post.title}
                     ></img>
@@ -175,6 +180,7 @@ const Blog = ({ posts }) => {
                 ))}
             </div>
           </div>
+          <Footer></Footer>
         </div>
         {process.env.NODE_ENV === "development" && mounted && (
           <div className="fixed bottom-6 right-6">
