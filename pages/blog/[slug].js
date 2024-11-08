@@ -46,7 +46,7 @@ const BlogPost = ({ post, previousPost }) => {
             </h3>
           </div>
           <img
-            className="w-full mt-10 h-screen rounded-lg shadow-lg object-cover"
+            className="w-auto m-auto mt-10 h-auto max-h-screen rounded-lg shadow-lg object-cover"
             src={post.image}
             alt={post.title}
           ></img>
