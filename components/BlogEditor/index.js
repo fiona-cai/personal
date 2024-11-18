@@ -16,6 +16,7 @@ const BlogEditor = ({ post, close, refresh }) => {
     tagline: post.tagline,
     preview: post.preview,
     image: post.image,
+    type: post.type,
   });
 
   const savePost = async () => {
@@ -106,6 +107,20 @@ const BlogEditor = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Tagline</label>
               <input
                 value={blogVariables.tagline}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    tagline: e.target.value,
+                  })
+                }
+                className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
+                type="text"
+              ></input>
+            </div>
+            <div className="mt-5 flex flex-col items-center">
+              <label className="w-full text-sx opacity-50">Type</label>
+              <input
+                value={blogVariables.type}
                 onChange={(e) =>
                   setBlogVariables({
                     ...blogVariables,

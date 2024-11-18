@@ -153,12 +153,18 @@ const Blog = ({ posts }) => {
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
+                    <div >
                     <img
                       className="w-full h-60 rounded-lg object-cover"
                       src={post.image}
                       alt={post.title}
                     ></img>
+                    <div className="top-4 right-4 absolute">
+                    <Button type={"green"}>{post.type}</Button>
+                    </div>
+                    </div>
                     <h1 className="mt-5 text-3xl">{post.title}</h1>
+                    
                     <p className="mt-2 opacity-50 text-sm">{post.preview}</p>
                     <span className="text-sm mt-5 opacity-25">
                       {ISOToDate(post.date)}
@@ -202,6 +208,7 @@ export async function getStaticProps() {
     "preview",
     "author",
     "date",
+    "type",
   ]);
 
   // Sort posts by date in descending order (most recent first)

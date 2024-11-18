@@ -93,6 +93,7 @@ export async function getStaticProps({ params }) {
     "tagline",
     "image",
     "content",
+    "type",
   ]);
 
   // Get and sort all posts by date in descending order

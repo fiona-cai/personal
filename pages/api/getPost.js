@@ -10,6 +10,7 @@ export default function handler(req, res) {
     "date",
     "tagline",
     "content",
+    "type",
   ]);
   if (post) {
     res.status(200).json(post);
