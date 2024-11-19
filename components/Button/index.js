@@ -21,7 +21,7 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   // Theme-based styles for primary, secondary, and green buttons
   const primaryStyle = theme === "dark" ? "bg-white text-black" : "bg-black text-white";
   const secondaryStyle = theme === "dark" ? "hover:bg-slate-600 text-white" : "hover:bg-slate-100 text-black";
-  const greenStyle = "bg-[#222d1f] text-white text-xs"; // No hover effect for green button
+  const greenStyle = "bg-[#E2EFE2] text-[#56744E]"; // No hover effect for green button
 
   return (
     <button

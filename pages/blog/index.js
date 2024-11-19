@@ -131,8 +131,8 @@ const Blog = ({ posts }) => {
         </Head>
         
         <div className={`relative `}>
-          <div className="gradient-circle2"></div>
-          <div className="gradient-circle3"></div>
+          {/* <div className="gradient-circle2"></div>
+          <div className="gradient-circle3"></div> */}
           <div className="gradient-circle-bottom"></div>
           <Header 
             isBlog={true} 
@@ -145,6 +145,8 @@ const Blog = ({ posts }) => {
               className="text-4xl text-center">
               My Journey
             </h1>
+            <p
+              className="text-center m-4 mx-[20%] opacity-50 text-sm">Honestly most of these were written way after the original event, but I've been keeping up with updating this page regularly since November 2024! (for that reason the posts are also way more detailed after that)</p>
             <div className="mt-10 p-8 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
