@@ -5,6 +5,16 @@ import data from "../../data/portfolio.json";
 const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   const { theme } = useTheme();
 
+  // Check if children is a valid non-empty string
+  const hasText = React.Children.toArray(children).some(
+    (child) => typeof child === "string" && child.trim() !== ""
+  );
+
+  // Return null if no valid text is provided
+  if (!hasText) {
+    return null;
+  }
+
   const handleButtonClick = (e) => {
     e.preventDefault(); // Prevents any default behavior on mobile
     if (onClick) {
