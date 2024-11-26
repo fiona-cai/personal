@@ -67,42 +67,44 @@ body {
   );
 }
 
-/* .gradient-circle3 {
+.gradient-circle3 {
   overflow: hidden;
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  top: 10px;
-  left: 40vw;
-  height: 30vw;
-  rotate: -190deg;
-  width: 30vw;
-  opacity: 0.2;
-  filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
-  background: radial-gradient(
-    circle,
-    #33ff00 0%,
-    #33ff0074 100%
-  );
-} */
-
-
-.gradient-circle-bottom {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
   z-index: 100;
-  bottom: -20px;
-  height: 30px;
-  width: 100vw;
-  opacity: 0.5;
-  filter: blur(40px);
+  bottom: -385px;
+  left: -20vw;
+  height: 400px;
+  rotate: 0deg;
+  width: 140vw;
+  opacity: 1;
+  filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
+  background: radial-gradient(
+    circle,
+    #abcca3ca 0%,
+    #8da0883c 100%
+  );
+}
+
+
+/* .gradient-circle-bottom {
+  position: absolute;
+  pointer-events: none;
+  z-index: -2;
+  bottom: 0px;
+  left: -60px;
+  height: 25px;
+  width: 50vw;
+  opacity: 0.9;
+  filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   background: radial-gradient(
     circle,
     #7EE562 0%,
     #7ee5627c 100%
   );
-}
+} */
 
 .gradient-shadow:hover::before {
   content: "";
@@ -154,4 +156,14 @@ body {
 
 .link:hover .description {
   opacity: 0.5;
+}
+
+/* Complete example for custom cursor */
+* {
+  cursor: url('/images/default.png'), auto;
+}
+
+/* Example for applying custom cursor to specific elements */
+.cat {
+  cursor: url('/images/pointer.png'), auto;
 }

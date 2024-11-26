@@ -131,6 +131,8 @@ const Blog = ({ posts }) => {
         </Head>
         
         <div className={`relative `}>
+        <div className='gradient-circle3'></div>
+
           <div className="gradient-circle-bottom"></div>
           <Header 
             isBlog={true} 
@@ -149,13 +151,13 @@ const Blog = ({ posts }) => {
               {posts &&
                 posts.map((post) => (
                   <div
-                    className="relative shadow-lg p-4 rounded-xl bg-white"
+                    className="cat relative shadow-lg p-4 rounded-xl bg-white"
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
                     <div>
                       <img
-                        className="w-full h-60 rounded-lg object-cover"
+                        className="cat w-full h-60 rounded-lg object-cover"
                         src={post.image}
                         alt={post.title}
                       />
@@ -163,10 +165,10 @@ const Blog = ({ posts }) => {
                         <Button type={"green"}>{calculateReadingTime(post.content)}</Button>
                       </div>
                     </div>
-                    <h1 className="mt-5 text-3xl">{post.title}</h1>
+                    <h1 className="cat mt-5 text-3xl">{post.title}</h1>
                     
-                    <p className="mt-2 opacity-50 text-sm">{post.preview}</p>
-                    <span className="text-sm mt-5 opacity-25">
+                    <p className="cat mt-2 opacity-50 text-sm">{post.preview}</p>
+                    <span className="cat text-sm mt-5 opacity-25">
                       {ISOToDate(post.date)}
                     </span>
                     {process.env.NODE_ENV === "development" && mounted && (

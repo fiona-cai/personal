@@ -23,7 +23,7 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   };
 
   const baseClasses = "text-sm tablet:text-base p-2 m-1 rounded-lg transition-all duration-300 ease-out";
-  const scaleEffect = type !== "green" ? "hover:scale-105 active:scale-95" : ""; // Disable hover effects for green button
+  const scaleEffect = type !== "green" ? "hover:scale-105 active:scale-95 cat" : ""; // Disable hover effects for green button
   const cursorStyle = typeof window !== "undefined" && "ontouchstart" in window
     ? "" // Avoid cursor-none on mobile
     : data.showCursor ? "cursor-none" : "cursor-pointer";
@@ -31,7 +31,7 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   // Theme-based styles for primary, secondary, and green buttons
   const primaryStyle = theme === "dark" ? "bg-white text-black" : "bg-black text-white";
   const secondaryStyle = theme === "dark" ? "hover:bg-slate-600 text-white" : "hover:bg-slate-100 text-black";
-  const greenStyle = "bg-[#E2EFE2] text-[#56744E]"; // No hover effect for green button
+  const greenStyle = "bg-[#E2EFE2] text-[#56744E] cat"; // No hover effect for green button
 
   return (
     <button

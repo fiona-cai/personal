@@ -28,6 +28,8 @@ const BlogPost = ({ post, previousPost }) => {
       </Head>
 
       <div className={`relative `}>
+      <div className='gradient-circle3'></div>
+
           <div className="gradient-circle-bottom"></div>
         <Header isBlog={true} />
         <div className="p-[4%]">
@@ -54,12 +56,12 @@ const BlogPost = ({ post, previousPost }) => {
 
           {/* Previous Blog Button */}
           {previousPost && (
-            <button
+            <Button
               onClick={() => router.push(`/blog/${previousPost.slug}`)}
               className="mt-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md shadow-md"
             >
               Previous Blog: {previousPost.title}
-            </button>
+            </Button>
           )}
         </div>
         <Footer />

@@ -9,7 +9,7 @@ const Footer = ({}) => {
       <div className="mt-5 laptop:mt-40 p-2 laptop:p-0">
         <div>
           <div className="mt-10">
-            <div className="mt-10">
+            <div className="mt-10 flex justify-center">
               <Socials />
             </div>
           </div>

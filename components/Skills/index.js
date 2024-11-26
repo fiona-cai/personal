@@ -3,7 +3,6 @@ import data from "../../data/portfolio.json";
 
 const Skills = () => {
   return (
-
       <div className="flex flex-wrap justify-center items-center gap-4 tablet:gap-6 laptop:gap-8 mx-4 py-6 px-[8%]">
         {data.skills.map((skill, index) => (
           <div key={index} className="flex flex-col items-center text-center p-1">

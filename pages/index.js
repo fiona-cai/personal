@@ -75,6 +75,8 @@ export default function Home() {
 
   return (
     <div className={`relative `}>
+      <div className='gradient-circle3'></div>
+
       <Head>
         <title className="z-100">{data.name}</title>
       </Head>
@@ -131,7 +133,8 @@ export default function Home() {
             {data.aboutpara}
           </p>
           <div className="mt-24">
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">Skills & Frameworks</h1>
+
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl tablet:mb-6">Skills & Frameworks</h1>
             <Skills />
           </div>
         </div>
