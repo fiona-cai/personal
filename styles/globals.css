@@ -144,7 +144,7 @@ body {
 }
 
 .link:hover .description-wrapper {
-  max-height: 275px; /* Adjust this to be enough to fit the description */
+  max-height: 1000px; /* Adjust this to be enough to fit the description */
 }
 
 .description {
