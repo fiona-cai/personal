@@ -11,10 +11,10 @@ import Footer from "../../components/Footer";
 
 // Function to calculate reading time
 const calculateReadingTime = (text) => {
-  const wordsPerMinute = 10;
+  const wordsPerMinute = 150;
   const words = text.trim().split(/\s+/).length;
   const time = Math.ceil(words / wordsPerMinute);
-  return `${time} min read`;
+  return `${time} minute read`;
 };
 
 const Blog = ({ posts }) => {
@@ -160,7 +160,7 @@ const Blog = ({ posts }) => {
                         alt={post.title}
                       />
                       <div className="top-4 right-4 absolute">
-                        <Button type={"green"}>{calculateReadingTime(post.preview)}</Button>
+                        <Button type={"green"}>{calculateReadingTime(post.content)}</Button>
                       </div>
                     </div>
                     <h1 className="mt-5 text-3xl">{post.title}</h1>
@@ -209,10 +209,11 @@ export async function getStaticProps() {
     "author",
     "date",
     "type",
+    "content",
   ]);
 
   posts.forEach(post => {
-    post.readingTime = calculateReadingTime(post.preview);
+    post.readingTime = calculateReadingTime(post.content);
   });
 
   // Sort posts by date in descending order (most recent first)
