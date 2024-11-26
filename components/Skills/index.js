@@ -12,7 +12,7 @@ const Skills = () => {
               alt={skill.name} 
               width={0} 
               height={0} 
-              className="w-[4vw] h-[4vw] mb-2 hover:scale-110 transition-transform ease-out duration-300"
+              className="w-[2rem] h-[2rem] mb-2 hover:scale-110 transition-transform ease-out duration-300"
             />
             <p className="text-s">{skill.name}</p>
           </div>

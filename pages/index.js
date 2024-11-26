@@ -140,7 +140,7 @@ export default function Home() {
 
           <h1 className="text-center text-2xl text-bold tablet:text-4xl">My Work</h1>
 
-          <div className="my-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8 mx-12">
+          <div className="my-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8 mx-[0.5vw]">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
