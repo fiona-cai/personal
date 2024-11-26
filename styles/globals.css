@@ -51,19 +51,19 @@ body {
   overflow: hidden;
   position: absolute;
   pointer-events: none;
-  z-index: 0;
-  top: 100vh;
-  right: -150px;
-  height: 30vw;
-  rotate: -190deg;
-  width: 30vw;
-  opacity: 0.5;
-  filter: blur(250px);
-  -webkit-backdrop-filter: blur(250px);
+  z-index: -1;
+  top: 500px;
+  left: 1200px;
+  height: 400px;
+  rotate: -180deg;
+  width: 800px;
+  opacity: 1;
+  filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
   background: radial-gradient(
     circle,
-    #33ff00 0%,
-    #33ff0074 100%
+    #ffffff 0%,
+    #ffffff 100%
   );
 }
 
@@ -135,4 +135,23 @@ body {
   left: 0;
   background: inherit;
   border-radius: inherit;
+}
+
+.description-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.link:hover .description-wrapper {
+  max-height: 275px; /* Adjust this to be enough to fit the description */
+}
+
+.description {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.link:hover .description {
+  opacity: 0.5;
 }

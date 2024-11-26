@@ -92,19 +92,19 @@ export default function Home() {
             <div className="">
               <h1
                 ref={textOne}
-                className="text-3xl tablet:text-4xl laptop:text-5xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-3xl tablet:text-4xl laptop:text-5xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
               <h1
                 ref={textTwo}
-                className="text-5xl tablet:text-6xl laptop:text-7xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-5xl tablet:text-6xl laptop:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineTwo}
               </h1>
               <h1
                 ref={textThree}
-                className="text-l tablet:text-2xl laptop:text-3xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-l tablet:text-2xl laptop:text-3xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineThree}
               </h1>
@@ -117,7 +117,7 @@ export default function Home() {
 
 
         </div>
-        <div className="inset-x-0 w-full absolute top-0 laptop:top-20">
+        <div className="inset-x-0 w-full max-w-full absolute top-0 laptop:top-20">
           <Line></Line>
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function Home() {
 
         <div className="flex flex-wrap  items-center justify-center	" >
           <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243" height="162" layout="intrinsic" />
-          <p className="m-10 mx-12 tablet:mr-0 font-light	text-base  mob:w-full text-left tablet:w-[45%]  text-base laptop:text-base w-full ">
+          <p className="m-10 mx-16 mob:mx-8 tablet:mr-0 font-light	text-base mob:w-full text-left tablet:w-[45%]  text-base laptop:text-base w-full " style={{fontSize:'1em'}}>
             {data.aboutpara}
           </p>
           <div className="mt-24">
@@ -140,7 +140,7 @@ export default function Home() {
 
           <h1 className="text-center text-2xl text-bold tablet:text-4xl">My Work</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8">
+          <div className="my-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-8 mx-12">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}

@@ -37,7 +37,7 @@ export default function App() {
   }, [isSmallScreen, videoPlaying]);
 
   return (
-    <div style={{ zIndex: -1, position: 'relative', overflow: 'hidden', height: '720px' }}>
+    <><div className="gradient-circle2 hidden laptopl:block"></div><div style={{ zIndex: -2, position: 'relative', overflow: 'hidden', height: '720px', width:'100vw' }}>
       {isSmallScreen ? (
         <>
           {!videoPlaying && ( // Show thumbnail if video is not playing
@@ -52,8 +52,7 @@ export default function App() {
                 top: 0,
                 left: 0,
                 zIndex: 1, // Ensure the thumbnail is above the video
-              }}
-            />
+              }} />
           )}
           <video
             ref={videoRef} // Attach the ref to the video element
@@ -73,12 +72,11 @@ export default function App() {
               if (videoPlaying) {
                 videoRef.current.play();
               }
-            }}
-          />
+            } } />
         </>
       ) : (
         <Spline scene="https://prod.spline.design/L19y2WPG8QjVI-4R/scene.splinecode" />
       )}
-    </div>
+    </div></>
   );
 }

@@ -9,6 +9,13 @@ import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
 import Footer from "../../components/Footer";
 
+// Function to calculate reading time
+const calculateReadingTime = (text) => {
+  const wordsPerMinute = 10;
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wordsPerMinute);
+  return `${time} min read`;
+};
 
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
@@ -33,22 +40,19 @@ const Blog = ({ posts }) => {
   // Define the handleAboutScroll function
   const handleAboutScroll = () => {
     if (router.pathname !== "/") {
-      // If not on the homepage, go back to the homepage
       router.push("/").then(() => {
         setTimeout(() => {
           const aboutSection = document.getElementById("about");
           if (aboutSection) {
-            // Scroll to the About section after navigating
             window.scrollTo({
               top: aboutSection.offsetTop,
               left: 0,
               behavior: "smooth",
             });
           }
-        }, 100); // Delay to ensure the page has loaded
+        }, 100);
       });
     } else {
-      // Scroll to the About section if on the homepage
       const aboutSection = document.getElementById("about");
       if (aboutSection) {
         window.scrollTo({
@@ -60,25 +64,21 @@ const Blog = ({ posts }) => {
     }
   };
 
-  // Define the handleWorkScroll function
   const handleWorkScroll = () => {
     if (router.pathname !== "/") {
-      // If not on the homepage, go back to the homepage
       router.push("/").then(() => {
         setTimeout(() => {
           const workSection = document.getElementById("work");
           if (workSection) {
-            // Scroll to the Work section after navigating
             window.scrollTo({
               top: workSection.offsetTop,
               left: 0,
               behavior: "smooth",
             });
           }
-        }, 100); // Delay to ensure the page has loaded
+        }, 100);
       });
     } else {
-      // Scroll to the Work section if on the homepage
       const workSection = document.getElementById("work");
       if (workSection) {
         window.scrollTo({
@@ -131,8 +131,6 @@ const Blog = ({ posts }) => {
         </Head>
         
         <div className={`relative `}>
-          {/* <div className="gradient-circle2"></div>
-          <div className="gradient-circle3"></div> */}
           <div className="gradient-circle-bottom"></div>
           <Header 
             isBlog={true} 
@@ -155,15 +153,15 @@ const Blog = ({ posts }) => {
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
-                    <div >
-                    <img
-                      className="w-full h-60 rounded-lg object-cover"
-                      src={post.image}
-                      alt={post.title}
-                    ></img>
-                    <div className="top-4 right-4 absolute">
-                    <Button type={"green"}>{post.type}</Button>
-                    </div>
+                    <div>
+                      <img
+                        className="w-full h-60 rounded-lg object-cover"
+                        src={post.image}
+                        alt={post.title}
+                      />
+                      <div className="top-4 right-4 absolute">
+                        <Button type={"green"}>{calculateReadingTime(post.preview)}</Button>
+                      </div>
                     </div>
                     <h1 className="mt-5 text-3xl">{post.title}</h1>
                     
@@ -212,6 +210,10 @@ export async function getStaticProps() {
     "date",
     "type",
   ]);
+
+  posts.forEach(post => {
+    post.readingTime = calculateReadingTime(post.preview);
+  });
 
   // Sort posts by date in descending order (most recent first)
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));

@@ -81,18 +81,27 @@
             "url": "https://devpost.com/software/trackback"
         },
         {
-            "title": "Homework Run",
-            "headline": "Augmented Reality Game",
-            "description": "Homework Run is an augmented reality game that motivates players to stay active while dodging obstacles and answering trivia questions. By tracking body movements through the player's webcam, the game challenges users to avoid obstacles like cellphones and Instagram icons. Collisions prompt true-false questions on a chosen topic, adding an educational twist. The game uses OpenCV for motion detection, MediaPipe for pose tracking, and OpenAI’s GPT-3.5 for generating trivia questions, creating a fun way to blend learning with physical activity.",
-            "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/993/672/datas/gallery.jpg",
-            "url": "https://devpost.com/software/homework-run"
+            "id": "06809bad-56a8-41e3-a299-228df76413e4",
+            "title": "\"See\"",
+            "description": "\"See\" is an innovative AI-powered assistive tool designed to empower visually impaired individuals by providing seamless, voice-driven interaction with their surroundings. Leveraging Meta's Llama models and advanced context-aware technology, \"See\" offers a highly personalized experience through natural voice commands, auditory feedback, and offline functionality. It simplifies complex tasks like navigation, object recognition, and text reading, enabling users to gain independence and confidently explore the world with a single tap. Designed for accessibility and adaptability, \"See\" works across devices, breaking barriers and redefining inclusion for the blind community.\n\n\n\n\n\n",
+            "imageSrc": "./images/see.png",
+            "url": "http://chetanverma.com/",
+            "headline": "Made at Meta's first Llama hackathon in Toronto"
         },
+        
         {
             "title": "VocalAI",
             "headline": "Karaoke App",
             "description": "VocalAI includes two main features:\n\nKaraoke Creation: Converts any song into a karaoke track that matches the original composition.\nSpeech Recognition & Pitch Scoring: Analyzes vocal delivery for accurate pronunciation and pitch, providing real-time feedback and scoring.\nThese tools offer personalized guidance and track progress to help improve singing abilities.",
             "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/507/975/datas/medium.png",
             "url": "https://devpost.com/software/vocalai"
+        },
+        {
+            "title": "Homework Run",
+            "headline": "Augmented Reality Game",
+            "description": "Homework Run is an augmented reality game that motivates players to stay active while dodging obstacles and answering trivia questions. By tracking body movements through the player's webcam, the game challenges users to avoid obstacles like cellphones and Instagram icons. Collisions prompt true-false questions on a chosen topic, adding an educational twist. The game uses OpenCV for motion detection, MediaPipe for pose tracking, and OpenAI’s GPT-3.5 for generating trivia questions, creating a fun way to blend learning with physical activity.",
+            "imageSrc": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/993/672/datas/gallery.jpg",
+            "url": "https://devpost.com/software/homework-run"
         },
         {
             "title": "CrisisControl",
@@ -108,6 +117,7 @@
             "imageSrc": "https://www.bayviewstuco.ca/assets/img/ombre_logo.png",
             "url": "https://www.bayviewstuco.ca/"
         }
+
     ],
     "services": [
         {

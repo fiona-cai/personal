@@ -10,11 +10,11 @@ const Skills = () => {
             <Image 
               src={skill.icon} 
               alt={skill.name} 
-              width={40} 
-              height={40} 
-              className="mb-2 hover:scale-110 transition-transform ease-out duration-300"
+              width={0} 
+              height={0} 
+              className="w-[4vw] h-[4vw] mb-2 hover:scale-110 transition-transform ease-out duration-300"
             />
-            <p className="text-xs">{skill.name}</p>
+            <p className="text-s">{skill.name}</p>
           </div>
         ))}
       </div>
