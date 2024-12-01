@@ -12,18 +12,17 @@ import Link from "next/link";
 import Spline from "../components/Spline";
 import Line from "../components/Line";
 import Skills from "../components/Skills";
+import { useRouter } from "next/router";
 
 import Image from 'next/image'
-
-
 
 // Local Data
 import data from "../data/portfolio.json";
 
 //images
 
-
 export default function Home() {
+  const router = useRouter();
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
@@ -47,7 +46,6 @@ export default function Home() {
       });
     }
   };
-  
 
   const handleAboutScroll = () => {
     // Check if the current URL is not the homepage
@@ -63,7 +61,6 @@ export default function Home() {
       });
     }
   };
-  
 
   useIsomorphicLayoutEffect(() => {
     stagger(
@@ -157,8 +154,10 @@ export default function Home() {
           </div>
         </div>
 
-
-
+        {/* Read My Blogs Button */}
+        <div className="w-[180px] laptop:w-[190px] mx-auto mt-16">
+            {<Button className="" type="big" onClick={() => router.push("/blog")}>Read my blogs</Button>}
+        </div>
 
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (

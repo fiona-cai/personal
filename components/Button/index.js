@@ -22,16 +22,17 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
     }
   };
 
-  const baseClasses = "text-sm tablet:text-base p-2 m-1 rounded-lg transition-all duration-300 ease-out";
-  const scaleEffect = type !== "green" ? "hover:scale-105 active:scale-95 cat" : ""; // Disable hover effects for green button
+  const baseClasses = " rounded-lg transition-all duration-300 ease-out";
+  const scaleEffect = type !== "green" ? "hover:scale-110 active:scale-90 cat" : ""; // Disable hover effects for green button
   const cursorStyle = typeof window !== "undefined" && "ontouchstart" in window
     ? "" // Avoid cursor-none on mobile
     : data.showCursor ? "cursor-none" : "cursor-pointer";
 
-  // Theme-based styles for primary, secondary, and green buttons
-  const primaryStyle = theme === "dark" ? "bg-white text-black" : "bg-black text-white";
-  const secondaryStyle = theme === "dark" ? "hover:bg-slate-600 text-white" : "hover:bg-slate-100 text-black";
-  const greenStyle = "bg-[#E2EFE2] text-[#56744E] cat"; // No hover effect for green button
+  // Theme-based styles for primary, secondary, green, and blue buttons
+  const primaryStyle = theme === "dark" ? "text-sm tablet:text-base p-2 m-1 bg-white text-black" : "text-sm tablet:text-base p-2 m-1 bg-black text-white";
+  const secondaryStyle = theme === "dark" ? "text-sm tablet:text-base p-2 m-1 hover:bg-slate-600 text-white" : "text-sm tablet:text-base p-2 m-1 hover:bg-slate-100 text-black";
+  const greenStyle = "text-sm tablet:text-base p-2 m-1 bg-[#E2EFE2] text-[#56744E] cat"; // No hover effect for green button
+  const bigStyle = theme === "dark" ? "text-xl justify-center mx-auto p-8 m-2 hover:bg-[#E2EFE2] text-white cat" : "p-4 m-4 text-xl p-1 justify-center mx-auto bg-[#E2EFE2] text-[#56744E] cat"; // Blue button style
 
   return (
     <button
@@ -43,6 +44,8 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
           ? primaryStyle
           : type === "green"
           ? greenStyle
+          : type === "big"
+          ? bigStyle
           : secondaryStyle
       } ${scaleEffect} ${cursorStyle} ${classes}`}
       style={{
