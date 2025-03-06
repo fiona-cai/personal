@@ -32,7 +32,9 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   const primaryStyle = theme === "dark" ? "text-sm tablet:text-base p-2 m-1 bg-white text-black" : "text-sm tablet:text-base p-2 m-1 bg-black text-white";
   const secondaryStyle = theme === "dark" ? "text-sm tablet:text-base p-2 m-1 hover:bg-slate-600 text-white" : "text-sm tablet:text-base p-2 m-1 hover:bg-slate-100 text-black";
   const greenStyle = "text-sm tablet:text-base p-2 m-1 bg-[#E2EFE2] text-[#56744E] cat"; // No hover effect for green button
-  const bigStyle = theme === "dark" ? "text-xl justify-center mx-auto p-8 m-2 hover:bg-[#E2EFE2] text-white cat" : "p-4 m-4 text-xl p-1 justify-center mx-auto bg-[#E2EFE2] text-[#56744E] cat"; // Blue button style
+  const bigStyle = theme === "dark" 
+    ? "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#d0e8d0] text-[#56744E] shadow-lg cat" 
+    : "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#d0e8d0] text-[#56744E] shadow-lg cat";
 
   return (
     <button
@@ -49,7 +51,7 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
           : secondaryStyle
       } ${scaleEffect} ${cursorStyle} ${classes}`}
       style={{
-        position: "relative", // Ensures it’s positioned above other elements
+        position: "relative", // Ensures it's positioned above other elements
         zIndex: 10, // Higher z-index for top-layer interaction
       }}
     >

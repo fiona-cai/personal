@@ -6,10 +6,10 @@ import Button from "../Button";
 const Footer = ({}) => {
   return (
     <>
-      <div className="mt-5 laptop:mt-24 p-2 laptop:p-0">
+      <div className="my-2 laptop:mt-1 p-2 laptop:p-0">
         <div>
-          <div className="mt-10">
-            <div className="mt-10 flex justify-center">
+          <div className="">
+            <div className="flex justify-center">
               <Socials />
             </div>
           </div>
