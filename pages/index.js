@@ -86,7 +86,7 @@ export default function Home() {
       />
       <div className="">
 
-        <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-32 ">
+        <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-24">
           <div className=" ml-2 mt-24 flex items-center justify-between tablet:ml-5" >
             <div className="">
               <h1
@@ -95,6 +95,7 @@ export default function Home() {
               >
                 {data.headerTaglineOne}
               </h1>
+
               <h1
                 ref={textTwo}
                 className="text-5xl tablet:text-6xl laptop:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
@@ -103,8 +104,8 @@ export default function Home() {
               </h1>
               <h1
                 ref={textThree}
-                className="text-l tablet:text-2xl laptop:text-3xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
-              >
+                className="text-l flex-row-reverse tablet:text-2xl laptop:text-3xl flex items-center p-1 tablet:p-2 text-bold w-full laptop:w-full "
+              ><Image className="" src="/images/image.png" width="25" height="25" layout="intrinsic" />
                 {data.headerTaglineThree}
               </h1>
 
@@ -122,9 +123,10 @@ export default function Home() {
       </div>
 
       <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6">I like to code.</h1>
+        <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-6 shiny">I like to code.</h1>
 
         <div className="flex flex-wrap  items-center justify-center	" >
+
           <Image className=" object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden transition-all ease-out duration-300 mob:h-auto" src="/images/DSC00594.jpg" width="243" height="162" layout="intrinsic" />
           <p className="m-10 mx-16 mob:mx-8 tablet:mr-0 font-light	text-base mob:w-full text-left tablet:w-[45%]  text-base laptop:text-base w-full " style={{fontSize:'1em'}}>
             {data.aboutpara}
@@ -136,11 +138,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-32 mx-8 laptop:mt-24 p-2 laptop:p-0" ref={workRef} id="work">
+        <div className="mt-32 mx-10 laptop:mt-24 p-2 laptop:p-0" ref={workRef} id="work">
+          <div className="text-center mb-12">
+            <h1 className="text-2xl text-bold tablet:text-4xl mb-4">My Work</h1>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              A collection of my projects and experiences. Click on any project to learn more.
+            </p>
+          </div>
 
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl">My Work</h1>
-
-          <div className="my-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 laptopl:grid-cols-3 gap-8 mx-[0.5vw]">
+          <div className="my-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-8 mx-[0.5vw]">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
