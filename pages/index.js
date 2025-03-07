@@ -125,8 +125,8 @@ export default function Home() {
         }
         .floral-accent {
           position: absolute;
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
           background: radial-gradient(circle at center, rgba(255, 192, 203, 0.2), transparent);
           border-radius: 50%;
           filter: blur(20px);
@@ -198,10 +198,8 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="section-spacing relative px-4" ref={skillsRef}>
-        <div className="floral-accent top-0 left-0 transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="floral-accent bottom-0 right-0 transform translate-x-1/2 translate-y-1/2"></div>
-        
-        <div className="floral-card p-8 tablet:p-12 laptop:p-16 max-w-6xl mx-auto">
+
+        <div className="floral-card p-8 tablet:p-12 laptop:p-16 max-w-6xl mx-auto overflow-hidden">
           <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-16 relative">
             Skills & Frameworks
           </h1>
