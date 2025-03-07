@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { getPostBySlug, getAllPosts } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
+import PhotoDump from "../../components/PhotoDump";
 import Footer from "../../components/Footer";
 import Head from "next/head";
 import { useIsomorphicLayoutEffect } from "../../utils";
@@ -52,7 +53,11 @@ const BlogPost = ({ post, previousPost }) => {
             src={post.image}
             alt={post.title}
           ></img>
-          <ContentSection content={post.content}></ContentSection>
+          {post.type === 'dump' ? (
+            <PhotoDump content={post.content} />
+          ) : (
+            <ContentSection content={post.content} />
+          )}
 
           {/* Previous Blog Button */}
           {previousPost && (
