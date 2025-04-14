@@ -142,10 +142,7 @@ const Blog = ({ posts }) => {
               My Journey
             </h1>
             <p className="text-center m-4 mx-[20%] opacity-50 text-sm">
-              Honestly most of these were written way after the original event,
-              but I’ve been keeping up with updating this page regularly since
-              November 2024! (for that reason the posts are also way more
-              detailed after that)
+              Honestly, most of these were written way after the original event
             </p>
             <div className="mt-10 p-8 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
             {posts &&
