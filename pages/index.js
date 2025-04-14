@@ -139,6 +139,7 @@ export default function Home() {
       </Head>
 
       <div className="gradient-circle"></div>
+      <div className="gradient-circle-side"></div>
       <div className="gradient-circle-bottom"></div>
       <Header
         handleWorkScroll={handleWorkScroll}
@@ -234,7 +235,7 @@ export default function Home() {
       <div className="mt-12" ref={blogRef}>
         <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-8 shiny">↓ more fiona stuff ↓</h1>
         <div className="mb-36 flex justify-center items-center relative">
-          <div className="absolute w-72 h-72 bg-gradient-to-r from-purple-300/20 via-pink-300/20 to-blue-300/20 rounded-full blur-3xl -z-10 left-1/2 -translate-x-1/2"></div>
+          <div className="absolute w-96 h-96 bg-gradient-to-r from-pink-300/20 via-pink-300/20 to-pink-300/20 rounded-full blur-3xl z-9 left-1/2 -translate-x-1/2"></div>
           <div className="transform hover:scale-110 transition-all duration-300 hover:-translate-y-1">
             {<Button 
               className="px-12 py-6 text-lg tablet:text-xl laptop:text-2xl font-medium shadow-lg hover:shadow-xl" 

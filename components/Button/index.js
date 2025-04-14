@@ -33,8 +33,8 @@ const Button = ({ children, type, onClick, classes, icon: Icon }) => {
   const secondaryStyle = theme === "dark" ? "text-sm tablet:text-base p-2 m-1 hover:bg-slate-600 text-white" : "text-sm tablet:text-base p-2 m-1 hover:bg-slate-100 text-black";
   const greenStyle = "text-sm tablet:text-base p-2 m-1 bg-[#E2EFE2] text-[#56744E] cat"; // No hover effect for green button
   const bigStyle = theme === "dark" 
-    ? "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#d0e8d0] text-[#56744E] shadow-lg cat" 
-    : "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#d0e8d0] text-[#56744E] shadow-lg cat";
+    ? "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#ffffff] text-[#56744E] shadow-lg cat" 
+    : "text-xl justify-center mx-auto py-4 px-8 m-2 bg-[#E2EFE2] hover:bg-[#ffffff] text-[#56744E] shadow-lg cat";
 
   return (
     <button

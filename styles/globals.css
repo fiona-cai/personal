@@ -87,6 +87,26 @@ body {
   );
 }
 
+.gradient-circle-side {
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  top: -50vh;
+  left: 20vw;
+  height: 150vh;
+  rotate: -15deg;
+  width: 120vw;
+  opacity: 1;
+  filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  background: linear-gradient(
+    to right,
+    #8da08800 20%,
+    #cca3a351 100%
+  );
+}
+
 
 /* .gradient-circle-bottom {
   position: absolute;
