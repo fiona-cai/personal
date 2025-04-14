@@ -32,7 +32,7 @@ body {
   pointer-events: none;
   z-index: 0;
   top: -45px;
-  right: 400px;
+  right: 40vw;
   height: 100px;
   rotate: -12deg;
   width: 120vw;
@@ -92,18 +92,18 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 0;
-  top: -50vh;
-  left: 20vw;
+  top: -40vh;
+  right: -150px;
   height: 150vh;
-  rotate: -15deg;
-  width: 120vw;
+  rotate: -25deg;
+  width: 400px;
   opacity: 1;
   filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   background: linear-gradient(
     to right,
-    #8da08800 20%,
-    #cca3a351 100%
+    #8da08800 0%,
+    rgba(255, 19, 149, 0.08) 100%
   );
 }
 

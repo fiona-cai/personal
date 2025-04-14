@@ -30,7 +30,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {name.toLowerCase()}
         </h2>
         <div className="flex items-center space-x-4">
-          <Button onClick={handleAboutScroll}>About</Button>
+          <Button className="hover:bg-[#ffffff]" onClick={handleAboutScroll}>About</Button>
           <Button onClick={handleWorkScroll}>Work</Button>
           {showBlog && <Button onClick={() => router.push("/blog")}>Blog</Button>}
         </div>
