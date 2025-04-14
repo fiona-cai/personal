@@ -27,10 +27,10 @@ const WorkCard = ({ img, name, headline, description, onClick }) => {
           {headline ? headline : "Headline"}
         </h3>
         <div className="relative description-wrapper px-1 bg-[#ffffff] rounded-sm mt-2">
-          <p className="description text-xl opacity-50 text-sm max-h-24 overflow-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+          <p className="description text-xl opacity-50 text-sm max-h-36 overflow-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
             {description ? description : "Description"}
           </p>
-          <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>
       </div>
     </div>

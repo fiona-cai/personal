@@ -8,9 +8,9 @@ const Skills = () => {
   // Categorize skills
   const categories = {
     'Languages': ['Python', 'Java', 'JavaScript', 'TypeScript', 'C++', 'Go'],
-    'Frontend & Web': ['Angular', 'Bootstrap', 'CSS', 'HTML', 'jQuery', 'Next.js', 'React', 'Spring', 'Tailwind CSS', 'Three.js'],
-    'Backend & Databases': ['Flask', 'FastAPI', 'Node.js', 'PostgresSQL'],
-    'Development Tools': ['AWS', 'Git', 'Jenkins', 'Jira', 'JSON', 'Vercel'],
+    'Frontend': ['Angular', 'Bootstrap', 'CSS', 'HTML', 'jQuery', 'Next.js', 'React', 'Spring', 'Tailwind CSS', 'Three.js'],
+    'Backend': ['Flask', 'FastAPI', 'Node.js', 'PostgresSQL'],
+    'Tools': ['AWS', 'Git', 'Jenkins', 'Jira', 'JSON', 'Vercel'],
     'Design': ['Illustrator', 'Premiere Pro', 'Figma'],
   };
 
@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <div className="w-full">
       {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
+      <div className="flex flex-wrap justify-center gap-2 mb-6 mx-2">
         <button
           onClick={() => setActiveCategory('all')}
           className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
@@ -55,7 +55,7 @@ const Skills = () => {
       </div>
 
       {/* Skills Grid */}
-      <div className="flex flex-wrap justify-center items-center gap-4 tablet:gap-6 laptop:gap-8 mx-4 py-6 px-[8%] min-h-[300px]">
+      <div className="flex flex-wrap justify-center items-center gap-4 tablet:gap-6 laptop:gap-8 mx-2 laptop:mx-4 py-6 px-[8%] min-h-[300px]">
         {filteredSkills.map((skill, index) => (
           <div key={index} className="flex flex-col items-center text-center p-1">
             <Image 
@@ -65,7 +65,7 @@ const Skills = () => {
               height={0} 
               className="w-[2rem] h-[2rem] mb-2 hover:scale-110 transition-transform ease-out duration-300"
             />
-            <p className="text-s">{skill.name}</p>
+            <p className="text-sm">{skill.name}</p>
           </div>
         ))}
       </div>

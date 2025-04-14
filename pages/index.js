@@ -199,8 +199,8 @@ export default function Home() {
       {/* Skills Section */}
       <div className="section-spacing relative px-4" ref={skillsRef}>
 
-        <div className="floral-card p-8 tablet:p-12 laptop:p-16 max-w-6xl mx-auto overflow-hidden">
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-16 relative">
+        <div className="floral-card py-8 tablet:py-12 laptop:py-16 max-w-6xl mx-auto overflow-hidden">
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-8 laptop:mb-16 relative">
             Skills & Frameworks
           </h1>
           <Skills />
@@ -216,7 +216,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-12 mx-[0.5vw]">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-8 mx-[0.5vw]">
           {data.projects.map((project) => (
             <WorkCard
               key={project.id}
