@@ -33,17 +33,20 @@ const PhotoDump = ({ content }) => {
         {imageUrls.map((url, index) => (
           <div 
             key={index} 
-            className={`photo-item ${imageAspects[url] ? 'vertical' : 'horizontal'}`}
+            className={`photo-item ${imageAspects[url] ? 'vertical' : 'horizontal'} group`}
             onClick={() => handleImageClick(url)}
             style={{ '--animation-order': index }}
           >
-            <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+            <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
               <img 
                 src={url} 
                 alt={`Photo ${index + 1}`}
                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-sm font-medium">Click to view</span>
+              </div>
             </div>
           </div>
         ))}
@@ -52,7 +55,7 @@ const PhotoDump = ({ content }) => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center cursor-pointer"
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center cursor-pointer"
           onClick={closeModal}
         >
           <div 
@@ -62,10 +65,10 @@ const PhotoDump = ({ content }) => {
             <img 
               src={selectedImage} 
               alt="Selected photo"
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
             />
             <button 
-              className="absolute top-4 right-4 text-white text-4xl hover:text-pink-300 transition-colors"
+              className="absolute top-4 right-4 text-white text-4xl hover:text-pink-300 transition-colors bg-black/50 rounded-full w-10 h-10 flex items-center justify-center"
               onClick={closeModal}
             >
               ×

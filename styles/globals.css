@@ -223,6 +223,7 @@ body {
   break-inside: avoid;
   margin-bottom: 1.5rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .photo-item.vertical {
@@ -241,7 +242,7 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* Cool hover effects */
+/* Enhanced hover effects */
 .photo-item {
   position: relative;
   overflow: hidden;
@@ -283,7 +284,7 @@ body {
   }
 }
 
-/* Animation for items appearing */
+/* Enhanced animation for items appearing */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -300,7 +301,7 @@ body {
   animation-delay: calc(var(--animation-order) * 0.1s);
 }
 
-/* Lightbox animation */
+/* Enhanced lightbox animation */
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -314,4 +315,16 @@ body {
 
 .photo-dump img[alt="Selected photo"] {
   animation: zoomIn 0.3s ease-out forwards;
+}
+
+/* Photo dump indicator */
+.photo-dump::before {
+  content: '📸 Photo Dump';
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #4a5568;
+  opacity: 0.8;
 }
