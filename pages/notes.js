@@ -27,10 +27,9 @@ const Notes = () => {
   }, []);
 
   const renderPdfViewer = (path) => {
-    // Check if the device is iOS
-    const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-    // On iOS, avoid embedding in iframe directly
-    if (isIOS) {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  
+    if (false) {
       return (
         <embed
           src={path}
@@ -43,7 +42,7 @@ const Notes = () => {
     } else {
       return (
         <iframe
-          src={`/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(
+          src={`/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
             path
           )}#pagemode=none`}
           width="100%"
@@ -54,6 +53,8 @@ const Notes = () => {
       );
     }
   };
+  
+  
 
   return (
     showNotes.current && (
