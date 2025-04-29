@@ -58,13 +58,15 @@ const Notes = () => {
 
                   <div className="w-full h-[40vh] laptop:h-[70vh]">
                   <iframe
-  src={`/pdf-wrapper.html?file=${note.path}`}
+  src={`/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(note.path)}#pagemode=none`}
   width="100%"
   height="100%"
   className="w-full h-full"
   title={note.title}
-  loading="lazy"
 />
+
+
+
 
 
 

@@ -1,27 +1,29 @@
-<!-- public/pdf-wrapper.html -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>PDF Wrapper</title>
+    <title>PDF Loader</title>
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const file = urlParams.get("file");
+      const file = new URLSearchParams(window.location.search).get("file");
+      const path = file.startsWith("/") ? file : "/" + file;
 
-      fetch(file)
-        .then((res) => res.blob())
+      fetch(path)
+        .then((res) => {
+          if (!res.ok) throw new Error("Fetch failed");
+          return res.blob();
+        })
         .then((blob) => {
           const blobUrl = URL.createObjectURL(blob);
-          const viewerUrl = `/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(blobUrl)}#pagemode=none`;
-          window.location.href = viewerUrl;
+          const viewer = `/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(blobUrl)}#pagemode=none`;
+          window.location.replace(viewer);
         })
-        .catch((err) => {
-          document.body.innerHTML = "Failed to load PDF.";
-          console.error(err);
+        .catch((e) => {
+          console.error("PDF error:", e);
+          document.body.innerText = "❌ Failed to load PDF.";
         });
     </script>
   </head>
   <body>
-    <p>Loading PDF...</p>
+    <p>📄 Loading PDF...</p>
   </body>
 </html>
