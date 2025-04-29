@@ -1,0 +1,27 @@
+<!-- public/pdf-wrapper.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF Wrapper</title>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const file = urlParams.get("file");
+
+      fetch(file)
+        .then((res) => res.blob())
+        .then((blob) => {
+          const blobUrl = URL.createObjectURL(blob);
+          const viewerUrl = `/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(blobUrl)}#pagemode=none`;
+          window.location.href = viewerUrl;
+        })
+        .catch((err) => {
+          document.body.innerHTML = "Failed to load PDF.";
+          console.error(err);
+        });
+    </script>
+  </head>
+  <body>
+    <p>Loading PDF...</p>
+  </body>
+</html>
