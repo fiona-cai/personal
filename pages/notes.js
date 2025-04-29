@@ -60,7 +60,7 @@ const Notes = () => {
                     <iframe
                       src={note.path}
                       width="100%"
-                      height="100%"
+                      height="10000%"
                       className="w-full h-full"
                       title={note.title}
                       loading="lazy"
