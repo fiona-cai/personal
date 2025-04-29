@@ -14,7 +14,7 @@ const pdfNotes = [
     date: "2025-04-29",
   },
   {
-    title: "Macroeconomics Notes",
+    title: "IB HL Economics (Macro)",
     path: "/pdfs/macro.pdf",
     date: "to be made",
   },
@@ -57,14 +57,18 @@ const Notes = () => {
                   </div>
 
                   <div className="w-full h-[40vh] laptop:h-[70vh]">
-                    <iframe
-                      src={note.path}
-                      width="100%"
-                      height="10000%"
-                      className="w-full h-full"
-                      title={note.title}
-                      loading="lazy"
-                    />
+                  <iframe
+  src={`/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(note.path)}#pagemode=none`}
+  width="100%"
+  height="100%"
+  className="w-full h-full"
+  title={note.title}
+  loading="lazy"
+/>
+
+
+
+
                   </div>
                   <div className=" py-4 p-6 border-b border-gray-200 bg-gray-50">
                     <p className="text-xs text-gray-400 mt-1">{note.date}</p>
