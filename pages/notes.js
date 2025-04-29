@@ -27,33 +27,24 @@ const Notes = () => {
   }, []);
 
   const renderPdfViewer = (path) => {
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  
-    if (false) {
-      return (
+    return (
+      <div className="relative w-full h-full">
         <embed
-          src={path}
-          width="100%"
-          height="600px"
-          type="application/pdf"
-          className="w-full h-full"
-        />
-      );
-    } else {
-      return (
-        <iframe
           src={`/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
             path
-          )}#pagemode=none`}
+          )}`}
           width="100%"
           height="100%"
           className="w-full h-full"
           title="PDF Viewer"
+          frameBorder="0"
         />
-      );
-    }
+        <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          Your browser does not support PDFs. <a href={path}>Download the PDF</a>.
+        </p>
+      </div>
+    );
   };
-  
   
 
   return (
