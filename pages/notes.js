@@ -1,10 +1,8 @@
 import Head from "next/head";
-import { useRef } from "react";
-import { stagger } from "../animations";
+import { useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import data from "../data/portfolio.json";
-import { useIsomorphicLayoutEffect } from "../utils";
 
 // PDF notes list
 const pdfNotes = [
@@ -14,7 +12,7 @@ const pdfNotes = [
     date: "2025-04-29",
   },
   {
-    title: "IB HL Economics (Macro)",
+    title: "Macroeconomics Notes",
     path: "/pdfs/macro.pdf",
     date: "to be made",
   },
@@ -24,10 +22,38 @@ const Notes = () => {
   const showNotes = useRef(data.showNotes || data.showBlog);
   const text = useRef();
 
-  useIsomorphicLayoutEffect(() => {
-    stagger([text.current], { y: 40, x: -10 }, { y: 0, x: 0 });
+  useEffect(() => {
     if (!showNotes.current) window.location.href = "/";
   }, []);
+
+  const renderPdfViewer = (path) => {
+    // Check if the device is iOS
+    const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    // On iOS, avoid embedding in iframe directly
+    if (isIOS) {
+      return (
+        <embed
+          src={path}
+          width="100%"
+          height="600px"
+          type="application/pdf"
+          className="w-full h-full"
+        />
+      );
+    } else {
+      return (
+        <iframe
+          src={`/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(
+            path
+          )}#pagemode=none`}
+          width="100%"
+          height="100%"
+          className="w-full h-full"
+          title="PDF Viewer"
+        />
+      );
+    }
+  };
 
   return (
     showNotes.current && (
@@ -36,8 +62,6 @@ const Notes = () => {
           <title>Notes</title>
         </Head>
         <div className="relative">
-          <div className="gradient-circle3"></div>
-          <div className="gradient-circle-bottom"></div>
           <Header isBlog={true} />
           <div className="mt-10 px-16">
             <h1 ref={text} className="text-4xl text-center mb-2">My Notes</h1>
@@ -57,21 +81,7 @@ const Notes = () => {
                   </div>
 
                   <div className="w-full h-[40vh] laptop:h-[70vh]">
-                  <iframe
-  src={`/pdfjs-5.2.133-dist/web/viewer.html?file=${encodeURIComponent(note.path)}#pagemode=none`}
-  width="100%"
-  height="100%"
-  className="w-full h-full"
-  title={note.title}
-/>
-
-
-
-
-
-
-
-
+                    {renderPdfViewer(note.path)}
                   </div>
                   <div className=" py-4 p-6 border-b border-gray-200 bg-gray-50">
                     <p className="text-xs text-gray-400 mt-1">{note.date}</p>
