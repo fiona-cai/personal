@@ -55,7 +55,7 @@ const Notes = () => {
         </Head>
         <div className="relative">
           <Header isBlog={true} />
-          <div className="mt-10 px-16">
+          <div className="mt-10 px-8 laptop:px-16">
             <h1 ref={text} className="text-4xl text-center mb-2">My Notes</h1>
             <p className="text-center text-sm opacity-50 mb-10">
               I only do this for non-STEM subjects because I find them harder 😭
