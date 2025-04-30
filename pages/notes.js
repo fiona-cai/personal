@@ -31,18 +31,18 @@ const Notes = () => {
     return (
       <div className="relative w-full h-full">
         <object data={path} type="application/pdf" width="100%" height="100%">
-          <div className="absolute bottom-0 left-0 w-full text-center bg-gray-50 py-4">
-            <p className="text-lg text-gray-700">
-              Looks like the PDF is not being displayed.{" "}
-            </p>
-            <a href={path} className="text-xl font-bold text-[#abcca3] hover:underline">
-                Download it here
-              </a>.
-          </div>
         </object>
+        {/* Fallback always visible */}
+        <div className="absolute bottom-0 left-0 w-full text-center bg-gray-50 py-4">
+          <p className="text-lg text-gray-700">Having trouble viewing the PDF?</p>
+          <a href={path} className="text-xl font-bold text-[#abcca3] hover:underline">
+            Download it here
+          </a>
+        </div>
       </div>
     );
   };
+  
   
   
   
@@ -72,7 +72,7 @@ const Notes = () => {
                     </h1>
                   </div>
 
-                  <div className="w-full h-[40vh] laptop:h-[70vh]">
+                  <div className="w-full h-screen">
                     {renderPdfPreview(note.path)}
                   </div>
                   <div className="py-4 p-6 border-b border-gray-200 bg-gray-50">
