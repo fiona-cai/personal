@@ -27,33 +27,31 @@ const Notes = () => {
     if (!showNotes.current) window.location.href = "/";
   }, []);
 
-  const renderPdfViewer = (path) => {
-    const handleError = () => {
-      setIsPdfError(true);
-    };
-
+  const renderPdfPreview = (path) => {
     return (
       <div className="relative w-full h-full">
-        {isPdfError ? (
-          <embed
-            src={/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
-              path
-            )}}
-            width="100%"
-            height="100%"
-            className="w-full h-full"
-            title="PDF Viewer"
-            frameBorder="0"
-            onError={handleError}
-          />
-        ) : (
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <a href={path}>Download the PDF</a>.
-          </div>
-        )}
+        <embed
+          src={`/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
+            path
+          )}&page=1`}
+          width="100%"
+          height="100%"
+          className="w-full h-full"
+          title="PDF Preview"
+          frameBorder="0"
+        />
+        <div className="absolute bottom-0 left-0 w-full text-center bg-gray-50 py-4">
+          <a
+            href={path}
+            className="text-lg font-bold text-[#abcca3] hover:underline"
+          >
+            Download the Full PDF
+          </a>
+        </div>
       </div>
     );
   };
+  
 
   return (
     showNotes.current && (
@@ -81,7 +79,7 @@ const Notes = () => {
                   </div>
 
                   <div className="w-full h-[40vh] laptop:h-[70vh]">
-                    {renderPdfViewer(note.path)}
+                    {renderPdfPreview(note.path)}
                   </div>
                   <div className="py-4 p-6 border-b border-gray-200 bg-gray-50">
                     <p className="text-xs text-gray-400 mt-1">{note.date}</p>
