@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import data from "../data/portfolio.json";
-import { Document, Page } from 'react-pdf';
 
 // PDF notes list
 const pdfNotes = [
@@ -29,29 +28,32 @@ const Notes = () => {
   }, []);
 
   const renderPdfViewer = (path) => {
+    const handleError = () => {
+      setIsPdfError(true);
+    };
+
     return (
       <div className="relative w-full h-full">
-        <iframe
-          src={`${path}#page=1`} // Open only the first page
-          width="100%"
-          height="400px"
-          className="w-full h-full"
-          title="PDF Preview"
-          frameBorder="0"
-        />
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gray-800 text-center">
-          <p className="text-white font-semibold text-lg">Want the full notes? Download them below!</p>
-          <a
-            href={path}
-            className="mt-2 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Download the Full PDF
-          </a>
-        </div>
+        {isPdfError ? (
+          <embed
+            src={/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
+              path
+            )}}
+            width="100%"
+            height="100%"
+            className="w-full h-full"
+            title="PDF Viewer"
+            frameBorder="0"
+            onError={handleError}
+          />
+        ) : (
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <a href={path}>Download the PDF</a>.
+          </div>
+        )}
       </div>
     );
   };
-  
 
   return (
     showNotes.current && (
@@ -67,7 +69,7 @@ const Notes = () => {
               I only do this for non-STEM subjects because I find them harder 😭
             </p>
             <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 items-center py-8">
-              {pdfNotes.map((note) => (
+              {pdfNotes.map((note, i) => (
                 <div
                   key={note.title}
                   className="w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl border border-gray-100"
