@@ -55,7 +55,7 @@ const Notes = () => {
         </Head>
         <div className="relative">
           <Header isBlog={true} />
-          <div className="mt-10 px-8 laptop:px-16">
+          <div className="mt-10 px-6 tablet:px-12 laptop:px-16">
             <h1 ref={text} className="text-4xl text-center mb-2">My Notes</h1>
             <p className="text-center text-sm opacity-50 mb-10">
               I only do this for non-STEM subjects because I find them harder 😭
@@ -66,7 +66,7 @@ const Notes = () => {
                   key={note.title}
                   className="w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl border border-gray-100"
                 >
-                  <div className="p-6 border-b border-gray-200 bg-gray-50 flex justify-between">
+                  <div className="p-5 border-b border-gray-200 bg-gray-50 flex justify-between">
                     <h1 className="text-2xl font-semibold text-gray-800">
                       {note.title}
                     </h1>
