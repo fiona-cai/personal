@@ -30,27 +30,21 @@ const Notes = () => {
   const renderPdfPreview = (path) => {
     return (
       <div className="relative w-full h-full">
-        <embed
-          src={`/pdfjs-5.2.133-legacy-dist/web/viewer.html?file=${encodeURIComponent(
-            path
-          )}&page=1`}
-          width="100%"
-          height="100%"
-          className="w-full h-full"
-          title="PDF Preview"
-          frameBorder="0"
-        />
-        <div className="absolute bottom-0 left-0 w-full text-center bg-gray-50 py-4">
-          <a
-            href={path}
-            className="text-lg font-bold text-[#abcca3] hover:underline"
-          >
-            Download the Full PDF
-          </a>
-        </div>
+        <object data={path} type="application/pdf" width="100%" height="100%">
+          <div className="absolute bottom-0 left-0 w-full text-center bg-gray-50 py-4">
+            <p className="text-lg text-gray-700">
+              Looks like the PDF is not being displayed.{" "}
+            </p>
+            <a href={path} className="text-xl font-bold text-[#abcca3] hover:underline">
+                Download it here
+              </a>.
+          </div>
+        </object>
       </div>
     );
   };
+  
+  
   
 
   return (
