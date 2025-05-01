@@ -13,10 +13,28 @@ const pdfNotes = [
     pages: 4,
   },
   {
-    title: "Macroeconomics Notes",
+    title: "IB HL Economics (Macro)",
     path: "/pdfs/macro.pdf",
     date: "to be made",
     pages: 0,
+  },
+  {
+    title: "IB HL Economics (Global)",
+    path: "/pdfs/global.pdf",
+    date: "to be made",
+    pages: 0,
+  },
+  {
+    title: "English Learner Portfolio (G11)",
+    path: "/pdfs/g11eng.pdf",
+    date: "2024-01-12",
+    pages: 15,
+  },
+  {
+    title: "English Learner Portfolio (G12)",
+    path: "/pdfs/g12eng.pdf",
+    date: "2025-04-30",
+    pages: 41,
   },
 ];
 
