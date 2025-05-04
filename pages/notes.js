@@ -15,8 +15,8 @@ const pdfNotes = [
   {
     title: "IB HL Economics (Macro)",
     path: "/pdfs/macro.pdf",
-    date: "to be made",
-    pages: 0,
+    date: "2025-05-03",
+    pages: 6,
   },
   {
     title: "IB HL Economics (Global)",
