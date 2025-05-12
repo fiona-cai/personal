@@ -21,8 +21,8 @@ const pdfNotes = [
   {
     title: "IB HL Economics (Global)",
     path: "/pdfs/global.pdf",
-    date: "to be made",
-    pages: 0,
+    date: "2025-05-12",
+    pages: 5,
   },
   {
     title: "English Learner Portfolio (G11)",
