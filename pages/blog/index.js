@@ -11,9 +11,9 @@ import Footer from "../../components/Footer";
 
 // Function to calculate reading time
 const calculateReadingTime = (text) => {
-  const wordsPerMinute = 150;
+  const wordsPerMinute = 200;
   const words = text.trim().split(/\s+/).length;
-  const time = Math.ceil(words / wordsPerMinute);
+  const time = Math.round(words / wordsPerMinute)+1;
   return `${time} minute read`;
 };
 
