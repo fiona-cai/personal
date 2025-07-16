@@ -182,18 +182,53 @@ export default function Home() {
 
       {/* About Section */}
       <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className=" text-center text-2xl text-bold tablet:text-4xl mb-16 shiny">I like to code.</h1>
-        <div className="flex flex-wrap items-center justify-center">
+        {/* <h1 className=" text-center text-2xl text-bold tablet:text-4xl mb-16 shiny">About Me</h1> */}
+        <div className="flex flex-wrap items-center justify-center  mx-auto">
           <Image 
             className="object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto" 
-            src="/images/DSC00594.jpg" 
+            src="/images/me.jpg" 
             width="243" 
             height="162" 
             layout="intrinsic" 
           />
-          <p className="m-10 mx-16 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[45%] laptop:text-base w-full" style={{ fontSize: '1em' }}>
-            {data.aboutpara}
+          <div className="w-full max-w-2xl p-6">
+      <h1 className="text-base font-bold text-gray-800 mb-6">I am a Computer Science student at the University of Waterloo</h1>
+      
+      <div className="space-y-4">
+        <div className="flex items-start">
+          <span className="text-green-500 mr-2">🌱</span>
+          <p className="text-gray-700">
+            Interested in human-computer interaction and ML/AI; specifically AI-assistive tools — I create for people ♥
           </p>
+        </div>
+
+        <div className="flex items-start">
+          <span className="text-green-500 mr-2">🌱</span>
+          <div className="text-gray-700">
+            <p>Currently coding up my <a href="https://fiona-cai.vercel.app/" className="text-blue-500 hover:underline">personal site</a> and working on personal projects in the social good space</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Recently MP4G qualifier (top 250/~80,000 female AMC/AIME scorers invited to compete at MIT)</li>
+              <li>Captain of Bayview's math team: HMMT (Harvard-MIT Math Comp), CTMC (Canadian Team Math Comp)</li>
+              <li>NCWIT Ontario award winner & Schulich Leader nominee</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex items-start">
+          <span className="text-green-500 mr-2">🌱</span>
+          <p className="text-gray-700">
+            Chair <a href="https://github.com/yrhacks" className="text-blue-500 hover:underline">@YRHacks</a>, 2 time high school software engineering intern <a href="https://www.rbc.com/about-rbc.html" className="text-blue-500 hover:underline">@RBC</a>
+          </p>
+        </div>
+
+        <div className="flex items-start">
+          <span className="text-green-500 mr-2">🍵</span>
+          <p className="text-gray-700">
+            Matcha connoisseur (and hopefully future sushi connoisseur)
+          </p>
+        </div>
+      </div>
+    </div>
         </div>
       </div>
 
@@ -247,7 +282,6 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mt-24"></div>
       </div>
 
       {process.env.NODE_ENV === "development" && (

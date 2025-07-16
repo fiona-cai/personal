@@ -3,7 +3,7 @@
 /* Markdown Container */
 
 .markdown-class {
-  @apply mt-4 p-4 bg-white shadow-sm rounded-lg text-gray-800 leading-relaxed;
+  @apply py-8 px-12 bg-white shadow-sm rounded-lg text-gray-800 leading-relaxed;
 }
 
 /* Headings */
@@ -12,10 +12,10 @@
   @apply mt-6 text-5xl font-bold text-gray-900 border-b-2 border-gray-300 pb-2 text-center;
 }
 .markdown-class h2 {
-  @apply mt-5 text-4xl font-semibold text-gray-800 border-gray-200 pb-1;
+  @apply mt-6 text-4xl font-semibold text-gray-800 border-gray-200 pb-1;
 }
 .markdown-class h3 {
-  @apply mt-5 text-2xl font-semibold text-gray-700;
+  @apply mt-8 text-2xl font-semibold text-gray-700;
 }
 .markdown-class h4 {
   @apply mt-4 text-xl font-semibold text-gray-600;
@@ -36,7 +36,7 @@
 /* Paragraphs */
 
 .markdown-class p {
-  @apply mt-3 text-gray-700 leading-8 font-normal text-lg;
+  @apply mt-6 text-gray-700 leading-8 font-normal text-base;
 }
 
 /* Emphasis */
@@ -54,19 +54,19 @@
 /* Lists */
 
 .markdown-class ol {
-  @apply mt-6 ml-8 list-decimal list-inside;
+  @apply mt-6 ml-8 list-decimal list-outside;
 }
 
 .markdown-class ol li {
-  @apply text-lg text-gray-700 leading-7 mb-2;
+  @apply text-base text-gray-700 leading-7 mb-2;
 }
 
 .markdown-class ul {
-  @apply mt-6 ml-8 list-disc list-inside;
+  @apply mt-6 ml-8 list-disc list-outside;
 }
 
 .markdown-class ul li {
-  @apply text-lg text-gray-700 leading-7 mb-2;
+  @apply text-base text-gray-700 leading-7 mb-2;
 }
 
 /* BlockQuote */
@@ -76,7 +76,7 @@
 }
 
 .markdown-class blockquote p {
-  @apply text-gray-700 text-lg;
+  @apply text-gray-700 text-lg  my-2;
 }
 
 /* Image */

@@ -5,11 +5,12 @@ import ContentSection from "../../components/ContentSection";
 import PhotoDump from "../../components/PhotoDump";
 import Footer from "../../components/Footer";
 import Head from "next/head";
-import { useIsomorphicLayoutEffect } from "../../utils";
 import { stagger } from "../../animations";
 import Button from "../../components/Button";
 import BlogEditor from "../../components/BlogEditor";
 import { useRouter } from "next/router";
+import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
+
 
 const BlogPost = ({ post, previousPost }) => {
   const [showEditor, setShowEditor] = useState(false);
@@ -33,26 +34,32 @@ const BlogPost = ({ post, previousPost }) => {
 
           <div className="gradient-circle-bottom"></div>
         <Header isBlog={true} />
-        <div className="p-[4%]">
+        <div className="p-[0%]">
           <div className="flex flex-col">
             <h1
               ref={textOne}
-              className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold"
+              className="mt-10 px-2 text-3xl tablet:text-4xl mob:text-3xl laptop:text-5xl text-bold text-center"
             >
               {post.title}
             </h1>
+
             <h3
               ref={textTwo}
-              className="mt-2 text-xl max-w-4xl text-darkgray opacity-50"
+              className="mt-2 px-2 text-xl laptop:text-2xl text-darkgray opacity-50 text-center"
             >
               {post.tagline}
             </h3>
+            <span className="mt-4 text-xs text-gray-500 text-center">
+                          {ISOToDate(post.date)}
+                        </span>
           </div>
+          <div className="mx-12">
           <img
             className="w-auto m-auto mt-10 h-auto max-h-screen rounded-lg shadow-lg object-cover"
             src={post.image}
             alt={post.title}
           ></img>
+          </div>
           {post.type === 'dump' ? (
             <PhotoDump content={post.content} />
           ) : (
