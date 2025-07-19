@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Spline from '@splinetool/react-spline';
 
 export default function App() {
@@ -42,11 +41,9 @@ export default function App() {
       {isSmallScreen ? (
         <>
           {!videoPlaying && ( // Show thumbnail if video is not playing
-            <Image
-              src="/thumbnail.png"
+            <img
+              src="/thumbnail.png" // Replace with your thumbnail image source
               alt="Video Thumbnail"
-              width={1920}
-              height={720}
               style={{
                 width: '100vw',
                 height: '720px',
@@ -54,10 +51,8 @@ export default function App() {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                zIndex: 1,
-              }}
-              unoptimized
-            />
+                zIndex: 1, // Ensure the thumbnail is above the video
+              }} />
           )}
           <video
             ref={videoRef} // Attach the ref to the video element
