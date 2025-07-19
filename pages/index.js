@@ -176,7 +176,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="inset-x-0 w-full max-w-full absolute top-24 laptop:top-20">
+
+        <div className="inset-x-0 w-full max-w-full absolute top-0 laptop:top-20">
           <Line></Line>
         </div>
       </div>
