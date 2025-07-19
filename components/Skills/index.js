@@ -28,10 +28,10 @@ const Skills = () => {
   return (
     <div className="w-full">
       {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6 mx-2">
+      <div className="flex flex-wrap justify-center gap-1 mb-4 mx-1">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+          className={`px-2 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
             activeCategory === 'all'
               ? 'bg-white/80 text-gray-800 shadow-sm'
               : 'text-gray-600 hover:bg-white/40'
@@ -55,7 +55,7 @@ const Skills = () => {
       </div>
 
       {/* Skills Grid */}
-      <div className="flex flex-wrap justify-center items-center gap-4 tablet:gap-6 laptop:gap-8 mx-2 laptop:mx-4 py-6 px-[8%] min-h-[300px]">
+      <div className="flex flex-wrap justify-center items-center gap-4 tablet:gap-6 laptop:gap-8 mx-2 laptop:mx-4 py-8 px-[8%] ">
         {filteredSkills.map((skill, index) => (
           <div key={index} className="flex flex-col items-center text-center p-1">
             <Image 
@@ -63,7 +63,9 @@ const Skills = () => {
               alt={skill.name} 
               width={0} 
               height={0} 
-              className="w-[2rem] h-[2rem] mb-2 hover:scale-110 transition-transform ease-out duration-300"
+              className={`mb-2 hover:scale-110 transition-transform ease-out duration-300 ${
+                activeCategory === 'all' ? 'w-[2rem] h-[2rem]' : 'w-[3rem] h-[3rem]'
+              }`}
             />
             <p className="text-sm">{skill.name}</p>
           </div>

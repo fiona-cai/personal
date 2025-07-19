@@ -93,17 +93,17 @@ body {
   pointer-events: none;
   z-index: 0;
   top: -40vh;
-  right: -150px;
+  right: -36vw;
   height: 150vh;
   rotate: -25deg;
-  width: 400px;
+  width: 100vw;
   opacity: 1;
   filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   background: linear-gradient(
     to right,
     #8da08800 0%,
-    rgba(255, 19, 149, 0.08) 100%
+    #ff139514 100%
   );
 }
 

@@ -149,25 +149,26 @@ export default function Home() {
       {/* Hero Section */}
       <div className="">
         <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-24">
-          <div className=" ml-2 mt-24 flex items-center justify-between tablet:ml-5" >
+          <div className=" ml- mt-24 flex items-center justify-between tablet:ml-5" >
             <div className="">
               <h1
                 ref={textOne}
-                className="text-3xl tablet:text-4xl laptop:text-5xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
+                className="text-4xl tablet:text-4xl laptop:text-5xl p-1 tablet:p-2 text-bold w-full mob:w-full laptop:w-full"
               >
                 {data.headerTaglineOne}
               </h1>
 
               <h1
                 ref={textTwo}
-                className="text-5xl tablet:text-6xl laptop:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                className="text-6xl tablet:text-6xl laptop:text-7xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
               >
                 {data.headerTaglineTwo}
               </h1>
               <h1
                 ref={textThree}
-                className="text-l flex-row-reverse tablet:text-2xl laptop:text-3xl flex items-center p-1 tablet:p-2 text-bold w-full laptop:w-full "
-              ><Image className="" src="/images/image.png" width="25" height="25" layout="intrinsic" />
+                className="text-xl flex-row-reverse tablet:text-2xl laptop:text-3xl flex items-center p-1 tablet:p-2 text-bold w-full laptop:w-full "
+              >
+                {/* <Image className="" src="/images/image.png" width="25" height="25" layout="intrinsic" /> */}
                 {data.headerTaglineThree}
               </h1>
             </div>
@@ -175,33 +176,38 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="inset-x-0 w-full max-w-full absolute top-0 laptop:top-20">
+        <div className="inset-x-0 w-full max-w-full absolute top-24 laptop:top-20">
           <Line></Line>
         </div>
       </div>
 
       {/* About Section */}
-      <div className="mt-108 tablet:mt-96 laptop:mt-108 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className=" text-center text-2xl text-bold tablet:text-4xl mb-16 shiny">I like to code.</h1>
+      <div className="mt-108 tablet:mt-96 laptop:mt-120 p-2 laptop:p-0" ref={aboutRef} id="about">
+        <h1 className=" text-center text-3xl text-bold tablet:text-[32px] mb-8 shiny">I build with people in mind.</h1>
         <div className="flex flex-wrap items-center justify-center">
           <Image 
-            className="object-cover hover:scale-110 transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto" 
+            className="object-cover transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto" 
             src="/images/DSC00594.jpg" 
-            width="243" 
+            width="343" 
             height="162" 
             layout="intrinsic" 
           />
-          <p className="m-10 mx-16 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[45%] laptop:text-base w-full" style={{ fontSize: '1em' }}>
-            {data.aboutpara}
+          <p
+            className="m-10 mx-10 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[45%] laptop:text-base w-full"
+            style={{ fontSize: '1em', whiteSpace: 'pre-line' }}
+          >
+            I'm interested in the intersection of <span style={{ color: '#dea4af', fontStyle: 'italic' }}>human-computer interaction</span> and <span style={{ color: '#dea4af', fontStyle: 'italic' }}>machine learning</span> and their applications — specifically, <span style={{ color: '#dea4af', fontStyle: 'italic' }}>assistive tools</span> that are smart, intuitive, and built to help.<br /><br />
+            My creativity spills into all kinds of spaces: staying awake at <span style={{ color: '#dea4af', fontStyle: 'italic' }}>hackathons</span> (and staying awake to organize them), launching <span style={{ color: '#dea4af', fontStyle: 'italic' }}>rockets</span>, solving <span style={{ color: '#dea4af', fontStyle: 'italic' }}>math</span> problems, performing at retirement homes, building websites, organizing school events, singing at coffeehouses, and designing things.<br /><br />
+            I study <span style={{ color: '#dea4af', fontStyle: 'italic' }}>Computer Science</span> at the <span style={{ color: '#dea4af', fontStyle: 'italic' }}>University of Waterloo</span>.
           </p>
         </div>
       </div>
 
       {/* Skills Section */}
-      <div className="section-spacing relative px-4" ref={skillsRef}>
+      <div className="mt-24 relative px-4" ref={skillsRef}>
 
         <div className="floral-card py-8 tablet:py-12 laptop:py-16 max-w-6xl mx-auto overflow-hidden">
-          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-8 laptop:mb-16 relative">
+          <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-4 laptop:mb-8 relative">
             Skills & Frameworks
           </h1>
           <Skills />
@@ -247,7 +253,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mt-24"></div>
+        {/* <div className="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent mt-24"></div> */}
       </div>
 
       {process.env.NODE_ENV === "development" && (
