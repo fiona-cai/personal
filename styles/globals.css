@@ -204,7 +204,7 @@ body {
   background: linear-gradient(to right, hsl(0, 0%, 10%) 0, #fcfffc 10%, hsl(0, 0%, 20%) 20%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 2s infinite linear;
+  animation: shine 5s infinite linear;
 }
 
 /* Photo Dump Styling */

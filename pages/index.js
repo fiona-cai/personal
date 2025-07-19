@@ -105,6 +105,12 @@ export default function Home() {
           margin-bottom: 25vh;
           opacity: 0;
         }
+          @media (max-width: 1000px) {
+          .section-spacing {
+            margin-top: 10vh;
+          margin-bottom: 10vh;
+          opacity: 0;
+          }
         .parallax-bg {
           position: absolute;
           width: 100%;
@@ -131,6 +137,15 @@ export default function Home() {
           border-radius: 50%;
           filter: blur(20px);
         }
+                  .about-img-responsive {
+          width: 350px !important;
+        }
+        @media (max-width: 1000px) {
+          .about-img-responsive {
+            width: 500px !important;
+            margin: 10px;
+          }
+        }
       `}</style>
 
       <div className='gradient-circle3'></div>
@@ -149,7 +164,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="">
         <div className="ml-8 tablet:mx-8 laptop:mt-20 mt-10 laptop:mx-24">
-          <div className=" ml- mt-24 flex items-center justify-between tablet:ml-5" >
+          <div className=" ml- tablet:mt-24 mt-10 flex items-center justify-between tablet:ml-5" >
             <div className="">
               <h1
                 ref={textOne}
@@ -176,38 +191,54 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        {/* <div className="inset-x-0 w-full max-w-full absolute top-24 laptop:top-20">
+          <Line></Line>
+        </div> */}
         <div className="inset-x-0 w-full max-w-full absolute top-0 laptop:top-20">
           <Line></Line>
         </div>
       </div>
 
       {/* About Section */}
-      <div className="mt-108 tablet:mt-96 laptop:mt-120 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className=" text-center text-4xl text-bold tablet:text-[32px] mb-4 shiny">Building with People in Mind</h1>
+      <div className="mt-96 tablet:mt-96 laptop:mt-120 p-2 laptop:p-0" ref={aboutRef} id="about">
+        <h1 className="text-center mb-4 shiny">
+          <span className="tablet:hidden flex items-center justify-center gap-2 w-full shiny">
+            <span className="text-[4rem] flex-shrink-0">✨</span>
+            <span className="flex flex-wrap items-center justify-center gap-x-4">
+              <span className="text-5xl shiny">building</span>
+              <span className="text-5xl shiny">w/</span>
+              <span className="text-5xl shiny">people</span>
+              <span className="text-5xl shiny">in</span>
+              <span className="text-5xl shiny">mind</span>
+            </span>
+            <span className="text-[4rem] flex-shrink-0">✨</span>
+          </span>
+          <span className="hidden tablet:inline tablet:inline text-4xl text-bold tablet:text-[32px] shiny">✨ building w/ people in mind ✨</span>
+        </h1>
         <div className="flex flex-wrap items-center justify-center">
           <Image 
-            className="object-cover transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto" 
+            className="object-cover transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto about-img-responsive" 
             src="/images/DSC00594.jpg" 
-            width="343" 
+            width="370" 
             height="162" 
             layout="intrinsic" 
             alt="Portrait of Fiona Cai" 
           />
+
           <p
-            className="m-10 mx-10 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[45%] laptop:text-base w-full"
-            style={{ fontSize: '1em', whiteSpace: 'pre-line' }}
+            className="text-md m-10 mx-8 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[80%] laptop:w-[50%] laptop:text-base w-full"
+            style={{whiteSpace: 'pre-line' }}
           >
-            I am interested in the intersection of <span style={{ color: '#dea4af', fontStyle: 'italic' }}>human-computer interaction</span> and <span style={{ color: '#dea4af', fontStyle: 'italic' }}>machine learning</span> and their applications — specifically, <span style={{ color: '#dea4af', fontStyle: 'italic' }}>assistive tools</span> that are smart, intuitive, and built to help.<br /><br />
-            My creativity spills into all kinds of spaces: staying awake at <span style={{ color: '#dea4af', fontStyle: 'italic' }}>hackathons</span> (and staying awake to organize them), launching <span style={{ color: '#dea4af', fontStyle: 'italic' }}>rockets</span>, solving <span style={{ color: '#dea4af', fontStyle: 'italic' }}>math</span> problems, performing at retirement homes, building websites, organizing school events, singing at coffeehouses, and designing things.<br /><br />
-            I study <span style={{ color: '#dea4af', fontStyle: 'italic' }}>Computer Science</span> at the <span style={{ color: '#dea4af', fontStyle: 'italic' }}>University of Waterloo</span>.<br />
+            I am interested in the intersection of <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic'}}>human-computer interaction</span> and <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>machine learning</span> and their applications — specifically, <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>assistive tools</span> that are smart, intuitive, and built to help.<br /><br />
+            My creativity spills into all kinds of spaces: staying awake at <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>hackathons</span> (and staying awake to organize them), launching <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>rockets</span>, solving <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>math</span> problems, performing <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic'}}>music</span> at retirement homes, building websites, organizing school events, singing at coffeehouses, doing digital <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic'}}>art & design</span>.<br /><br />
+            I study <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>Computer Science</span> at the <span className="text-lg" style={{ color: '#dea4af', fontStyle: 'italic' }}>University of Waterloo</span>.<br />
             {/* The single quote in "I'm" above is now escaped as &#39; to fix the ESLint error. */}
           </p>
         </div>
       </div>
 
       {/* Skills Section */}
-      <div className="mt-24 relative px-4" ref={skillsRef}>
+      <div className="section-spacing relative px-4" ref={skillsRef}>
 
         <div className="floral-card py-8 tablet:py-12 laptop:py-16 max-w-6xl mx-auto overflow-hidden">
           <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-4 laptop:mb-8 relative">
@@ -219,7 +250,7 @@ export default function Home() {
 
       {/* Work Section */}
       <div className="section-spacing mx-10" ref={workRef} id="work">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 laptop:mb-12">
           <h1 className="text-2xl text-bold tablet:text-4xl mb-4">My Work</h1>
           <p className="text-center opacity-50 text-md">
             A collection of my projects and experiences.
@@ -241,7 +272,7 @@ export default function Home() {
       </div>
 
       {/* Blog Section */}
-      <div className="mt-12" ref={blogRef}>
+      <div className="section-spacing" ref={blogRef}>
         <h1 className="text-center text-2xl text-bold tablet:text-4xl mb-8 shiny">↓ more fiona stuff ↓</h1>
         <div className="mb-36 flex justify-center items-center relative">
           <div className="absolute w-96 h-96 bg-gradient-to-r from-pink-300/20 via-pink-300/20 to-pink-300/20 rounded-full blur-3xl z-9 left-1/2 -translate-x-1/2"></div>
