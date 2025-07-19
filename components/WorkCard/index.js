@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import Button from "../Button";
 
 const WorkCard = ({ img, name, headline, description, onClick }) => {

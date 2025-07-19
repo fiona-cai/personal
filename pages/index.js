@@ -199,7 +199,7 @@ export default function Home() {
           >
             I'm interested in the intersection of <span style={{ color: '#dea4af', fontStyle: 'italic' }}>human-computer interaction</span> and <span style={{ color: '#dea4af', fontStyle: 'italic' }}>machine learning</span> and their applications — specifically, <span style={{ color: '#dea4af', fontStyle: 'italic' }}>assistive tools</span> that are smart, intuitive, and built to help.<br /><br />
             My creativity spills into all kinds of spaces: staying awake at <span style={{ color: '#dea4af', fontStyle: 'italic' }}>hackathons</span> (and staying awake to organize them), launching <span style={{ color: '#dea4af', fontStyle: 'italic' }}>rockets</span>, solving <span style={{ color: '#dea4af', fontStyle: 'italic' }}>math</span> problems, performing at retirement homes, building websites, organizing school events, singing at coffeehouses, and designing things.<br /><br />
-            I study <span style={{ color: '#dea4af', fontStyle: 'italic' }}>Computer Science</span> at the <span style={{ color: '#dea4af', fontStyle: 'italic' }}>University of Waterloo</span>.
+            I study <span style={{ color: '#dea4af', fontStyle: 'italic' }}>Computer Science</span> at the <span style={{ color: '#dea4af', fontStyle: 'italic' }}>University of Waterloo</span>.<br />
           </p>
         </div>
       </div>

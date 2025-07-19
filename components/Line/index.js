@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Spline from '@splinetool/react-spline';
 
 export default function App() {
