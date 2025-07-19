@@ -180,12 +180,12 @@ body {
 
 /* Complete example for custom cursor */
 * {
-  cursor: url('/images/default.png'), auto;
+  cursor: url('/images/IMG_8866.PNG'), auto;
 }
 
 /* Example for applying custom cursor to specific elements */
 .cat {
-  cursor: url('/images/pointer.png'), auto;
+  cursor: url('/images/IMG_8869.png'), auto;
 }
 
 @keyframes shine {
@@ -327,4 +327,8 @@ body {
   margin-bottom: 2rem;
   color: #4a5568;
   opacity: 0.8;
+}
+
+a {
+  cursor: url('/images/IMG_8869.png'), auto;
 }
