@@ -31,7 +31,7 @@ const Skills = () => {
       <div className="flex flex-wrap justify-center gap-1 mb-4 mx-1">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`px-2 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+          className={`cat px-2 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
             activeCategory === 'all'
               ? 'bg-white/80 text-gray-800 shadow-sm'
               : 'text-gray-600 hover:bg-white/40'
@@ -43,7 +43,7 @@ const Skills = () => {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+            className={`cat px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
               activeCategory === category
                 ? 'bg-white/80 text-gray-800 shadow-sm'
                 : 'text-gray-600 hover:bg-white/40'
