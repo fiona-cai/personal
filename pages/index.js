@@ -183,7 +183,7 @@ export default function Home() {
 
       {/* About Section */}
       <div className="mt-108 tablet:mt-96 laptop:mt-120 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className=" text-center text-3xl text-bold tablet:text-[32px] mb-8 shiny">I build with people in mind.</h1>
+        <h1 className=" text-center text-4xl text-bold tablet:text-[32px] mb-4 shiny">Building with People in Mind</h1>
         <div className="flex flex-wrap items-center justify-center">
           <Image 
             className="object-cover transition-all ease-out duration-300 relative rounded-lg overflow-hidden mob:h-auto" 
