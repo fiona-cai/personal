@@ -41,9 +41,11 @@ export default function App() {
       {isSmallScreen ? (
         <>
           {!videoPlaying && ( // Show thumbnail if video is not playing
-            <img
-              src="/thumbnail.png" // Replace with your thumbnail image source
+            <Image
+              src="/thumbnail.png"
               alt="Video Thumbnail"
+              width={1920}
+              height={720}
               style={{
                 width: '100vw',
                 height: '720px',
@@ -51,8 +53,10 @@ export default function App() {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                zIndex: 1, // Ensure the thumbnail is above the video
-              }} />
+                zIndex: 1,
+              }}
+              unoptimized
+            />
           )}
           <video
             ref={videoRef} // Attach the ref to the video element

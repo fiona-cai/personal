@@ -191,6 +191,7 @@ export default function Home() {
             width="343" 
             height="162" 
             layout="intrinsic" 
+            alt="Portrait of Fiona Cai" 
           />
           <p
             className="m-10 mx-10 mob:mx-8 tablet:mr-0 font-light text-base mob:w-full text-left tablet:w-[45%] laptop:text-base w-full"

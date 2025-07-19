@@ -12,11 +12,13 @@ const WorkCard = ({ img, name, headline, description, onClick }) => {
         <div className="absolute top-2 right-2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <Button type={"primary"} onClick={onClick}>View Project →</Button>
         </div>
-        <img
+            <Image
           alt={name}
           className="h-full w-full object-cover group-hover:scale-105 transition-all ease-out duration-300"
           src={img}
-        />
+            width={400}
+            height={300}
+            />
       </div>
       
       <div className="mt-5">
