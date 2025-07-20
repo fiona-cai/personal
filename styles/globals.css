@@ -185,7 +185,7 @@ body {
 
 /* Example for applying custom cursor to specific elements */
 .cat {
-  cursor: url('/images/IMG_8869.png'), auto;
+  cursor: url('/images/IMG_8869.PNG'), auto;
 }
 
 @keyframes shine {
