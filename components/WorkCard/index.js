@@ -4,7 +4,7 @@ import Button from "../Button";
 
 const WorkCard = ({ img, name, headline, description, onClick }) => {
   return (
-    <div className="bg-[#ffffff] overflow-hidden rounded-lg p-2 py-6 laptop:p-4 first:ml-0 link shadow hover:shadow-lg transition-all duration-300 cursor-pointer group">
+    <div className="cat bg-[#ffffff] overflow-hidden rounded-lg p-2 py-6 laptop:p-4 first:ml-0 link shadow hover:shadow-lg transition-all duration-300 cursor-pointer group">
       <div
         className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
         style={{ height: "180px" }}
