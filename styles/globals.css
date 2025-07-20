@@ -178,15 +178,13 @@ body {
   opacity: 0.5;
 }
 
-/* Complete example for custom cursor */
-* {
+/* * {
   cursor: url('/images/IMG_8866.PNG'), auto;
 }
 
-/* Example for applying custom cursor to specific elements */
 .cat {
   cursor: url('/images/IMG_8869.PNG'), auto;
-}
+} */
 
 @keyframes shine {
   0% {
