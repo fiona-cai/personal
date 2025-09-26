@@ -2,8 +2,9 @@ import React from "react";
 import Image from 'next/image';
 
 const WorkModal = ({ isOpen, onClose, project }) => {
-  if (!isOpen || !project) return null;
   const [showDescFade, setShowDescFade] = React.useState(false);
+  
+  if (!isOpen || !project) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
