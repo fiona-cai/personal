@@ -3,15 +3,197 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import { v4 as uuidv4 } from "uuid";
 import { useTheme } from "next-themes";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import {
+  useSortable,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
 // Data
 import yourData from "../data/portfolio.json";
+
+// Draggable Project Item Component
+const DraggableProjectItem = ({ project, index, editProjects, deleteProject }) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: project.id || index });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="mt-10">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          <div
+            {...attributes}
+            {...listeners}
+            className="cursor-grab active:cursor-grabbing mr-4 p-2 hover:bg-gray-100 rounded"
+            title="Drag to reorder"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M10 13a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2zM6 13a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2zm0-4a1 1 0 100-2 1 1 0 000 2z" />
+            </svg>
+          </div>
+          <h1 className="text-2xl">{project.title}</h1>
+        </div>
+        <Button
+          onClick={() => deleteProject(project.id)}
+          type="primary"
+        >
+          Delete
+        </Button>
+      </div>
+
+      <div className="flex items-center mt-5">
+        <label className="w-1/5 text-lg opacity-50">Title</label>
+        <input
+          value={project.title}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              title: e.target.value,
+            })
+          }
+          className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+          type="text"
+        ></input>
+      </div>
+      <div className="flex items-center mt-2">
+        <label className="w-1/5 text-lg opacity-50">
+          Headline
+        </label>
+  
+        <input
+          value={project.headline}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              headline: e.target.value,
+            })
+          }
+          className="w-4/5 ml-10 p-2  rounded-md shadow-lg border-2"
+          type="text"
+        ></input>
+      </div>
+      <div className="flex items-center mt-2">
+        <label className="w-1/5 text-lg opacity-50">
+          Description
+        </label>
+  
+        <textarea
+          value={project.description}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              description: e.target.value,
+            })
+          }
+          className="w-4/5 ml-10 p-2 h-96  rounded-md shadow-lg border-2"
+          type="text"
+        ></textarea>
+      </div>
+      <div className="flex items-center mt-2">
+        <label className="w-1/5 text-lg opacity-50">
+          Image Source
+        </label>
+        <input
+          value={project.imageSrc}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              imageSrc: e.target.value,
+            })
+          }
+          className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+          type="text"
+        ></input>
+      </div>
+      <div className="flex items-center mt-2">
+        <label className="w-1/5 text-lg opacity-50">url</label>
+        <input
+          value={project.url}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              url: e.target.value,
+            })
+          }
+          className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+          type="text"
+        ></input>
+      </div>
+      <div className="flex items-center mt-2">
+        <label className="w-1/5 text-lg opacity-50">CTA Text</label>
+        <input
+          value={project.ctaText || ''}
+          onChange={(e) =>
+            editProjects(index, {
+              ...project,
+              ctaText: e.target.value,
+            })
+          }
+          placeholder="Visit project ↗"
+          className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+          type="text"
+        ></input>
+      </div>
+      <hr className="my-10"></hr>
+    </div>
+  );
+};
 
 const Edit = () => {
   // states
   const [data, setData] = useState(yourData);
   const [currentTabs, setCurrentTabs] = useState("HEADER");
   const { theme } = useTheme();
+
+  // Drag and drop sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  // Handle drag end for reordering projects
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setData((prevData) => {
+        const oldIndex = prevData.projects.findIndex((project) => (project.id || prevData.projects.indexOf(project)) === active.id);
+        const newIndex = prevData.projects.findIndex((project) => (project.id || prevData.projects.indexOf(project)) === over.id);
+
+        return {
+          ...prevData,
+          projects: arrayMove(prevData.projects, oldIndex, newIndex),
+        };
+      });
+    }
+  };
 
   const saveData = () => {
     if (process.env.NODE_ENV === "development") {
@@ -47,6 +229,7 @@ const Edit = () => {
             "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
 
           url: "http://chetanverma.com/",
+          ctaText: "Visit project ↗",
         },
       ],
     });
@@ -347,99 +530,26 @@ let deleteProject = (id) => {
         {currentTabs === "PROJECTS" && (
           <>
             <div className="mt-10">
-              {data.projects.map((project, index) => (
-                <div className="mt-10" key={project.id}>
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{project.title}</h1>
-                    <Button
-                      onClick={() => deleteProject(project.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
-                  </div>
-
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Title</label>
-                    <input
-                      value={project.title}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          title: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">
-                      Headline
-                    </label>
-            
-                    <input
-                      value={project.headline}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          headline: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2  rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">
-                      Description
-                    </label>
-            
-                    <textarea
-                      value={project.description}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          description: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 h-96  rounded-md shadow-lg border-2"
-                      type="text"
-                    ></textarea>
-                  </div>
-                  <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">
-                      Image Source
-                    </label>
-                    <input
-                      value={project.imageSrc}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          imageSrc: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">url</label>
-                    <input
-                      value={project.url}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          url: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <hr className="my-10"></hr>
-                </div>
-              ))}
+              <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
+              >
+                <SortableContext
+                  items={data.projects.map((project, index) => project.id || index)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  {data.projects.map((project, index) => (
+                    <DraggableProjectItem
+                      key={project.id || index}
+                      project={project}
+                      index={index}
+                      editProjects={editProjects}
+                      deleteProject={deleteProject}
+                    />
+                  ))}
+                </SortableContext>
+              </DndContext>
             </div>
 
             <div className="my-10">

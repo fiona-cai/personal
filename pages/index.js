@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
+import WorkModal from "../components/WorkModal";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
@@ -30,6 +31,10 @@ export default function Home() {
   const textFour = useRef();
   const skillsRef = useRef();
   const blogRef = useRef();
+
+  // Modal state for Work details
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // Scroll animation function
   useEffect(() => {
@@ -62,6 +67,11 @@ export default function Home() {
         behavior: "smooth",
       });
     }
+  };
+
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
   };
 
   const handleAboutScroll = () => {
@@ -201,17 +211,17 @@ export default function Home() {
 
       {/* About Section */}
       <div className="mt-96 tablet:mt-96 laptop:mt-120 p-2 laptop:p-0" ref={aboutRef} id="about">
-        <h1 className="text-center mb-4 shiny">
+        <h1 className="text-center mb-4 shiny px-8 tablet:px-0">
           <span className="tablet:hidden flex items-center justify-center gap-2 w-full shiny">
-            <span className="text-[4rem] flex-shrink-0">✨</span>
+            <span className="text-[3rem] tablet:text-[4rem] flex-shrink-0">✨</span>
             <span className="flex flex-wrap items-center justify-center gap-x-4">
-              <span className="text-5xl shiny">building</span>
-              <span className="text-5xl shiny">w/</span>
-              <span className="text-5xl shiny">people</span>
-              <span className="text-5xl shiny">in</span>
-              <span className="text-5xl shiny">mind</span>
+              <span className="text-4xl tablet:text-5xl shiny">building</span>
+              <span className="text-4xl tablet:text-5xl shiny">w/</span>
+              <span className="text-4xl tablet:text-5xl shiny">people</span>
+              <span className="text-4xl tablet:text-5xl shiny">in</span>
+              <span className="text-4xl tablet:text-5xl shiny">mind</span>
             </span>
-            <span className="text-[4rem] flex-shrink-0">✨</span>
+            <span className="text-[3rem] tablet:text-[4rem] flex-shrink-0">✨</span>
           </span>
           <span className="hidden tablet:inline tablet:inline text-4xl text-bold tablet:text-[32px] shiny">✨ building w/ people in mind ✨</span>
         </h1>
@@ -265,7 +275,7 @@ export default function Home() {
               name={project.title}
               headline={project.headline}
               description={project.description}
-              onClick={() => window.open(project.url)}
+              onClick={() => openProjectModal(project)}
             />
           ))}
         </div>
@@ -297,6 +307,13 @@ export default function Home() {
           </Link>
         </div>
       )}
+
+      {/* Work detail modal */}
+      <WorkModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={selectedProject}
+      />
 
       <Footer />
     </div>
