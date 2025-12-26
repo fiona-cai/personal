@@ -210,7 +210,7 @@ const Blog = ({ posts }) => {
             />
           </div>
           <div className="absolute top-4 right-4">
-            <span className="px-2 py-0.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-pink-600 shadow-sm flex items-center">
+            <span className="px-2 py-0.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-[#dea4af] shadow-sm flex items-center">
               <span className="mr-1">📸</span> Photo Dump
             </span>
           </div>
@@ -222,7 +222,7 @@ const Blog = ({ posts }) => {
             <span className="text-xs text-gray-500">
               {ISOToDate(post.date)}
             </span>
-            <span className="text-xs text-pink-600 font-medium flex items-center">
+            <span className="text-xs font-medium flex items-center">
               View Photos <span className="ml-1">→</span>
             </span>
           </div>

@@ -3,7 +3,7 @@
 /* Markdown Container */
 
 .markdown-class {
-  @apply py-0 px-0 bg-transparent text-gray-800 leading-relaxed;
+  @apply py-0 px-4 bg-transparent text-gray-800 leading-relaxed;
   font-size: 1.125rem;
   line-height: 1.85;
 }
@@ -116,7 +116,7 @@
 /* Image */
 
 .markdown-class img {
-  @apply w-full max-w-full m-auto my-12 object-cover rounded-xl shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl;
+  @apply max-h-[40%] max-w-[80%] m-auto my-12 object-cover rounded-xl shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl;
   max-height: 600px;
 }
 

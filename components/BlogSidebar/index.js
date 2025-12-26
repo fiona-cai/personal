@@ -79,7 +79,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            <h1 className="text-2xl font-bold text-gray-900">All Posts</h1>
+            <h1 className="text-2xl text-gray-900">All Posts</h1>
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -112,7 +112,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
                     onClick={() => !isCurrent && handlePostClick(post.slug)}
                     className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-200 ${
                       isCurrent
-                        ? "ring-2 ring-[#ff1395] bg-[#ff1395]/5"
+                        ? "ring-2 ring-[#abcca3] bg-[#abcca3]/5"
                         : "bg-gray-50 hover:bg-gray-100 hover:shadow-md"
                     }`}
                   >
@@ -129,7 +129,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
                       <div className="flex-1 min-w-0">
                         <h3
                           className={`text-base font-semibold mb-1 line-clamp-2 ${
-                            isCurrent ? "text-[#ff1395]" : "text-gray-900"
+                            isCurrent ? "text-[#abcca3]" : "text-gray-900"
                           }`}
                         >
                           {post.title}
@@ -144,7 +144,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
                             {ISOToDate(post.date)}
                           </span>
                           {post.type === "dump" && (
-                            <span className="text-xs px-2 py-0.5 bg-white/90 rounded-full text-[#ff1395] font-medium">
+                            <span className="text-xs px-2 py-0.5 bg-white/90 rounded-full text-[#dea4af] font-medium">
                               📸 Photo Dump
                             </span>
                           )}
@@ -153,7 +153,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
                     </div>
                     {isCurrent && (
                       <div className="absolute top-2 right-2">
-                        <span className="text-xs px-2 py-1 bg-[#ff1395] text-white rounded-full font-medium">
+                        <span className="text-xs px-2 py-1 bg-[#abcca3] text-white rounded-full font-medium">
                           Current
                         </span>
                       </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 const PhotoDump = ({ content }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -7,13 +6,20 @@ const PhotoDump = ({ content }) => {
   const imageUrls = content.split('\n').filter(line => line.trim() !== '');
 
   useEffect(() => {
-    // Check image dimensions
+    // Check image dimensions using browser's native Image constructor
     imageUrls.forEach(url => {
-      const img = new Image();
+      const img = new window.Image();
       img.onload = () => {
         setImageAspects(prev => ({
           ...prev,
           [url]: img.height > img.width
+        }));
+      };
+      img.onerror = () => {
+        // If image fails to load, default to horizontal
+        setImageAspects(prev => ({
+          ...prev,
+          [url]: false
         }));
       };
       img.src = url;
@@ -39,17 +45,15 @@ const PhotoDump = ({ content }) => {
             style={{ '--animation-order': index }}
           >
             <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1">
-              <Image
+              <img
                 src={url}
                 alt={`Photo ${index + 1}`}
-                width={800}
-                height={600}
                 className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
-                unoptimized
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-sm font-medium">Click to view</span>
+                <span className="text-sm font-medium"></span>
               </div>
             </div>
           </div>
@@ -66,13 +70,10 @@ const PhotoDump = ({ content }) => {
             className="relative max-w-7xl max-h-[90vh] mx-4"
             onClick={e => e.stopPropagation()}
           >
-            <Image
+            <img
               src={selectedImage}
               alt="Selected photo"
-              width={1200}
-              height={900}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-              unoptimized
             />
             <button 
               className="absolute top-4 right-4 text-white text-4xl hover:text-pink-300 transition-colors bg-black/50 rounded-full w-10 h-10 flex items-center justify-center"

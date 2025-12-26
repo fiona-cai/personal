@@ -207,9 +207,7 @@ body {
 
 /* Photo Dump Styling */
 .photo-dump {
-  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .photo-grid {
@@ -317,13 +315,12 @@ body {
 
 /* Photo dump indicator */
 .photo-dump::before {
-  content: '📸 Photo Dump';
   display: block;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #4a5568;
+  color: rgb(222, 164, 175);
   opacity: 0.8;
 }
 
