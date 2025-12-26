@@ -18,6 +18,8 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
   const [showEditor, setShowEditor] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPreviousPostHovered, setIsPreviousPostHovered] = useState(false);
   const textOne = useRef();
   const textTwo = useRef();
   const router = useRouter();
@@ -66,11 +68,11 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
         
         {/* Hero Section */}
         <div className="relative">
-          <div className="max-w-4xl mx-auto px-8 tablet:px-8 laptop:px-12 pt-20 pb-12">
+          <div className="max-w-4xl mx-auto px-8 tablet:px-8 laptop:px-12 pt-16 pb-12">
             <div className="flex flex-col items-center text-center space-y-4">
               <h1
                 ref={textOne}
-                className="text-4xl tablet:text-5xl laptop:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl tablet:text-5xl font-bold text-gray-900 leading-tight"
               >
                 {post.title}
               </h1>
@@ -118,7 +120,9 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
               {previousPost && (
                 <button
                   onClick={() => router.push(`/blog/${previousPost.slug}`)}
-                  className="group flex items-center space-x-2 px-6 py-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                  className="group flex items-center space-x-2 px-4 py-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                  onMouseEnter={() => setIsPreviousPostHovered(true)}
+                  onMouseLeave={() => setIsPreviousPostHovered(false)}
                 >
                   <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -126,12 +130,11 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
                   <div className="text-left">
                     <div className="text-xs text-gray-500 uppercase tracking-wide">Previous Post</div>
                     <div 
-                      className="text-base font-medium text-gray-900 transition-colors"
+                      className="text-base font-medium transition-colors"
                       style={{ 
-                        color: '#8da088ff'
+                        color: '#8da088ff',
+                        opacity: isPreviousPostHovered ? 0.8 : 1
                       }}
-                      onMouseEnter={(e) => e.target.style.opacity = '0.8'}
-                      onMouseLeave={(e) => e.target.style.opacity = '1'}
                     >
                       {previousPost.title}
                     </div>
@@ -141,16 +144,15 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
               
                 <button
                   onClick={() => setShowSidebar(true)}
-                  className="px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 font-medium flex items-center space-x-2"
-                  style={{ backgroundColor: '#d4e6d1', color: '#2d5016' }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#c4d6c1';
-                    e.target.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                  className={`px-4 py-4 rounded-xl shadow-md transition-all duration-200 font-medium flex items-center space-x-2 ${
+                    isHovered ? 'shadow-lg' : ''
+                  }`}
+                  style={{ 
+                    backgroundColor: isHovered ? '#c4d6c1' : '#d4e6d1', 
+                    color: '#2d5016'
                   }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#d4e6d1';
-                    e.target.style.boxShadow = '';
-                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
