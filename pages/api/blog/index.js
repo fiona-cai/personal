@@ -15,7 +15,7 @@ export default function handler(req, res) {
         preview:
           "",
         image: getRandomImage(),
-        type: "tweet"
+        type: "blog"
       });
       fs.writeFileSync(postsfolder, data, (err) => console.error(err));
       res.status(200).json({ status: "CREATED" });

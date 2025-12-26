@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { getPostBySlug, getAllPosts } from "../../utils/api";
 import Header from "../../components/Header";
 import ContentSection from "../../components/ContentSection";
@@ -8,18 +8,36 @@ import Head from "next/head";
 import { stagger } from "../../animations";
 import Button from "../../components/Button";
 import BlogEditor from "../../components/BlogEditor";
+import BlogSidebar from "../../components/BlogSidebar";
 import { useRouter } from "next/router";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
+import Image from "next/image";
 
 
-const BlogPost = ({ post, previousPost }) => {
+const BlogPost = ({ post, previousPost, allPosts }) => {
   const [showEditor, setShowEditor] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
   const textOne = useRef();
   const textTwo = useRef();
   const router = useRouter();
 
   useIsomorphicLayoutEffect(() => {
     stagger([textOne.current, textTwo.current], { y: 30 }, { y: 0 });
+  }, []);
+
+  // Reading progress indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setReadingProgress(Math.min(100, Math.max(0, progress)));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -29,52 +47,112 @@ const BlogPost = ({ post, previousPost }) => {
         <meta name="description" content={post.preview} />
       </Head>
 
-      <div className={`relative `}>
-      <div className='gradient-circle3'></div>
+      <div className={`relative min-h-screen`}>
+        {/* Reading Progress Bar */}
+        <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
+          <div 
+            className="h-full transition-all duration-150 ease-out"
+            style={{ 
+              width: `${readingProgress}%`,
+              background: `linear-gradient(to right, #ff1395, #ff1395)`
+            }}
+          />
+        </div>
 
-          <div className="gradient-circle-bottom"></div>
+        <div className='gradient-circle3'></div>
+        <div className="gradient-circle-bottom"></div>
+        
         <Header isBlog={true} />
-        <div className="p-[0%]">
-          <div className="flex flex-col">
-            <h1
-              ref={textOne}
-              className="mt-10 px-2 text-3xl tablet:text-4xl mob:text-3xl laptop:text-5xl text-bold text-center"
-            >
-              {post.title}
-            </h1>
+        
+        {/* Hero Section */}
+        <div className="relative">
+          <div className="max-w-4xl mx-auto px-4 tablet:px-8 laptop:px-12 pt-20 pb-12">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <h1
+                ref={textOne}
+                className="text-4xl tablet:text-5xl laptop:text-6xl font-bold text-gray-900 leading-tight"
+              >
+                {post.title}
+              </h1>
 
-            <h3
-              ref={textTwo}
-              className="mt-2 px-2 text-xl laptop:text-2xl text-darkgray opacity-50 text-center"
-            >
-              {post.tagline}
-            </h3>
-            <span className="mt-4 text-xs text-gray-500 text-center">
-                          {ISOToDate(post.date)}
-                        </span>
+              <h3
+                ref={textTwo}
+                className="text-xl tablet:text-2xl laptop:text-3xl text-gray-600 font-light italic max-w-2xl"
+              >
+                {post.tagline}
+              </h3>
+              
+              <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mt-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>{ISOToDate(post.date)}</span>
+              </div>
+            </div>
           </div>
-          <div className="mx-12">
-          <img
-            className="w-auto m-auto mt-10 h-auto max-h-screen rounded-lg shadow-lg object-cover"
-            src={post.image}
-            alt={post.title}
-          ></img>
+
+          {/* Hero Image */}
+          <div className="max-w-5xl mx-auto px-4 tablet:px-8 laptop:px-12 mb-16">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+              <img
+                className="w-full h-auto max-h-[70vh] object-cover"
+                src={post.image}
+                alt={post.title}
+              />
+            </div>
           </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="max-w-4xl mx-auto px-4 tablet:px-8 laptop:px-12 pb-20">
           {post.type === 'dump' ? (
             <PhotoDump content={post.content} />
           ) : (
             <ContentSection content={post.content} />
           )}
 
-          {/* Previous Blog Button */}
-          {previousPost && (
-            <Button
-              onClick={() => router.push(`/blog/${previousPost.slug}`)}
-              className="mt-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md shadow-md"
-            >
-              Previous Blog: {previousPost.title}
-            </Button>
-          )}
+          {/* Navigation Section */}
+          <div className="mt-20 pt-12 border-t border-gray-200">
+            <div className={`flex items-center ${previousPost ? 'justify-between' : 'justify-end'}`}>
+              {previousPost && (
+                <button
+                  onClick={() => router.push(`/blog/${previousPost.slug}`)}
+                  className="group flex items-center space-x-3 px-6 py-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-500 uppercase tracking-wide">Previous Post</div>
+                    <div 
+                      className="text-base font-medium text-gray-900 transition-colors"
+                      style={{ 
+                        color: '#ff1395'
+                      }}
+                      onMouseEnter={(e) => e.target.style.opacity = '0.8'}
+                      onMouseLeave={(e) => e.target.style.opacity = '1'}
+                    >
+                      {previousPost.title}
+                    </div>
+                  </div>
+                </button>
+              )}
+              
+                <button
+                  onClick={() => setShowSidebar(true)}
+                  className="px-6 py-4 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 font-medium flex items-center space-x-2"
+                  style={{ backgroundColor: '#ff1395' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#e01285'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#ff1395'}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <span>All Posts</span>
+                </button>
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -94,6 +172,13 @@ const BlogPost = ({ post, previousPost }) => {
           refresh={() => router.reload(window.location.pathname)}
         />
       )}
+
+      <BlogSidebar
+        isOpen={showSidebar}
+        onClose={() => setShowSidebar(false)}
+        currentSlug={post.slug}
+        posts={allPosts}
+      />
     </>
   );
 };
@@ -111,9 +196,14 @@ export async function getStaticProps({ params }) {
   ]);
 
   // Get and sort all posts by date in descending order
-  const allPosts = getAllPosts(["slug", "date", "title"]).sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
+  const allPosts = getAllPosts([
+    "slug",
+    "date",
+    "title",
+    "image",
+    "preview",
+    "type",
+  ]).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Find the previous post by checking if it has an earlier date than the current post
   const previousPost = allPosts.find(
@@ -126,6 +216,7 @@ export async function getStaticProps({ params }) {
         ...post,
       },
       previousPost: previousPost || null, // Pass the previous post as a prop, or null if none exists
+      allPosts: allPosts, // Pass all posts for the sidebar
     },
   };
 }

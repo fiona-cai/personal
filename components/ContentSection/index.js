@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -22,12 +22,47 @@ const CodeBlock = {
       </code>
     );
   },
+  p: ({ node, children, ...props }) => {
+    // Check if this paragraph only contains an image
+    const hasOnlyImage = 
+      React.Children.count(children) === 1 &&
+      React.isValidElement(children) &&
+      children.type === 'img';
+    
+    // Add a class to identify image-only paragraphs
+    const className = hasOnlyImage ? 'image-paragraph' : '';
+    
+    return (
+      <p className={className} {...props}>
+        {children}
+      </p>
+    );
+  },
 };
 
 const ContentSection = ({ content }) => {
-  // Combine class names into one string
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    // After render, mark the last image in each consecutive group
+    if (containerRef.current) {
+      const imageParagraphs = containerRef.current.querySelectorAll('.image-paragraph');
+      
+      imageParagraphs.forEach((paragraph, index) => {
+        const nextSibling = paragraph.nextElementSibling;
+        const isLastInGroup = !nextSibling || !nextSibling.classList.contains('image-paragraph');
+        
+        if (isLastInGroup) {
+          paragraph.classList.add('last-image-in-group');
+        } else {
+          paragraph.classList.remove('last-image-in-group');
+        }
+      });
+    }
+  }, [content]);
+
   return (
-    <div className={styles.markdownClass}>
+    <div ref={containerRef} className={styles.markdownClass}>
       <ReactMarkdown components={CodeBlock} className="markdown-class">
         {content}
       </ReactMarkdown>

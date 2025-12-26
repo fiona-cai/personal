@@ -3,98 +3,185 @@
 /* Markdown Container */
 
 .markdown-class {
-  @apply py-8 px-12 bg-white shadow-sm rounded-lg text-gray-800 leading-relaxed;
+  @apply py-0 px-0 bg-transparent text-gray-800 leading-relaxed;
+  font-size: 1.125rem;
+  line-height: 1.85;
 }
 
 /* Headings */
 
 .markdown-class h1 {
-  @apply mt-6 text-5xl font-bold text-gray-900 border-b-2 border-gray-300 pb-2 text-center;
+  @apply mt-16 mb-8 text-4xl laptop:text-5xl font-bold text-gray-900 pb-4 border-b-2 border-gray-200;
+  font-family: "Chloe", sans-serif;
 }
 .markdown-class h2 {
-  @apply mt-6 text-4xl font-semibold text-gray-800 border-gray-200 pb-1;
+  @apply mt-12 mb-6 text-3xl laptop:text-4xl font-semibold text-gray-800 pb-2;
+  font-family: "Chloe", sans-serif;
 }
 .markdown-class h3 {
-  @apply mt-8 text-2xl font-semibold text-gray-700;
+  @apply mt-10 mb-4 text-2xl laptop:text-3xl font-semibold text-gray-700;
 }
 .markdown-class h4 {
-  @apply mt-4 text-xl font-semibold text-gray-600;
+  @apply mt-8 mb-3 text-xl laptop:text-2xl font-semibold text-gray-600;
 }
 .markdown-class h5 {
-  @apply mt-4 text-lg font-medium text-gray-600;
+  @apply mt-6 mb-2 text-lg laptop:text-xl font-medium text-gray-600;
 }
 .markdown-class h6 {
-  @apply mt-4 text-base font-medium text-gray-500;
+  @apply mt-4 mb-2 text-base laptop:text-lg font-medium text-gray-500;
 }
 
 /* Links */
 
 .markdown-class a {
-  @apply text-blue-600 font-semibold underline transition-opacity duration-200 ease-out hover:opacity-90;
+  @apply font-semibold underline transition-all duration-200 ease-out hover:no-underline;
+  color: #ff1395;
+  text-decoration-color: rgba(255, 19, 149, 0.3);
+}
+
+.markdown-class a:hover {
+  color: #e01285;
 }
 
 /* Paragraphs */
 
 .markdown-class p {
-  @apply mt-6 text-gray-700 leading-8 font-normal text-base;
+  @apply mt-6 mb-6 text-gray-700 font-normal;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.markdown-class p:first-of-type {
+  @apply text-xl laptop:text-2xl text-gray-800 font-light leading-relaxed;
+  font-style: italic;
+  color: #4b5563;
+  margin-top: 0;
 }
 
 /* Emphasis */
 
 .markdown-class strong {
-  @apply font-medium text-gray-900;
+  @apply font-semibold text-gray-900;
+  font-weight: 600;
 }
 
 /* Horizontal Rule */
 
 .markdown-class hr {
-  @apply my-8 border-t border-gray-300;
+  @apply my-12 border-t-2 border-gray-200;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Lists */
 
 .markdown-class ol {
-  @apply mt-6 ml-8 list-decimal list-outside;
+  @apply mt-6 ml-6 laptop:ml-8 list-decimal list-outside space-y-3;
 }
 
 .markdown-class ol li {
-  @apply text-base text-gray-700 leading-7 mb-2;
+  @apply text-gray-700 leading-relaxed pl-2;
+  font-size: 1.125rem;
+  line-height: 1.85;
 }
 
 .markdown-class ul {
-  @apply mt-6 ml-8 list-disc list-outside;
+  @apply mt-6 ml-6 laptop:ml-8 list-disc list-outside space-y-3;
 }
 
 .markdown-class ul li {
-  @apply text-base text-gray-700 leading-7 mb-2;
+  @apply text-gray-700 leading-relaxed pl-2;
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+
+.markdown-class ul li::marker {
+  color: #ff1395;
 }
 
 /* BlockQuote */
 
 .markdown-class blockquote {
-  @apply p-5 border-l-4 border-blue-400 rounded-lg shadow-md bg-blue-50 text-gray-800 italic;
+  @apply p-6 laptop:p-8 border-l-4 rounded-r-xl shadow-md text-gray-800 italic my-8;
+  border-color: #abcca3;
+  background: linear-gradient(to right, rgba(171, 204, 163, 0.1), transparent);
 }
 
 .markdown-class blockquote p {
-  @apply text-gray-700 text-lg  my-2;
+  @apply text-gray-700 text-lg laptop:text-xl my-2;
+  font-style: italic;
 }
 
 /* Image */
 
 .markdown-class img {
-  @apply max-h-[90vh] w-[84%] m-auto my-12 object-cover rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+  @apply w-full max-w-full m-auto my-12 object-cover rounded-xl shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl;
+  max-height: 600px;
+}
+
+.markdown-class p img {
+  @apply my-12;
+}
+
+/* Consecutive Images - Reduce spacing between images that appear one after another */
+.markdown-class .image-paragraph {
+  @apply mb-0;
+}
+
+.markdown-class .image-paragraph img {
+  @apply my-0 mb-6;
+}
+
+/* When an image paragraph follows another image paragraph, reduce top margin */
+.markdown-class .image-paragraph + .image-paragraph {
+  @apply mt-0;
+}
+
+.markdown-class .image-paragraph + .image-paragraph img {
+  @apply mt-0 mb-6;
+}
+
+/* Ensure first image in a group has normal top margin */
+.markdown-class p:not(.image-paragraph) + .image-paragraph,
+.markdown-class h1 + .image-paragraph,
+.markdown-class h2 + .image-paragraph,
+.markdown-class h3 + .image-paragraph,
+.markdown-class h4 + .image-paragraph,
+.markdown-class h5 + .image-paragraph,
+.markdown-class h6 + .image-paragraph {
+  @apply mt-12;
+}
+
+.markdown-class p:not(.image-paragraph) + .image-paragraph img,
+.markdown-class h1 + .image-paragraph img,
+.markdown-class h2 + .image-paragraph img,
+.markdown-class h3 + .image-paragraph img,
+.markdown-class h4 + .image-paragraph img,
+.markdown-class h5 + .image-paragraph img,
+.markdown-class h6 + .image-paragraph img {
+  @apply mt-12;
+}
+
+/* Last image in a group - when marked with the class, add normal bottom margin */
+.markdown-class .image-paragraph.last-image-in-group img {
+  @apply mb-12;
 }
 
 /* Code Block */
 
 .markdown-class pre {
-  @apply overflow-auto p-4 my-4 bg-gray-900 text-gray-100 rounded-lg shadow-inner;
+  @apply overflow-auto p-6 laptop:p-8 my-8 bg-gray-900 text-gray-100 rounded-xl shadow-2xl border border-gray-800;
 }
 
 .markdown-class code {
-  @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded text-sm;
+  @apply px-2 py-1 rounded text-sm font-mono;
+  font-weight: 500;
+  background-color: rgba(255, 19, 149, 0.15);
+  color: #c01075;
 }
 
 .markdown-class pre code {
   @apply bg-transparent text-gray-100 text-base;
+  padding: 0;
 }
