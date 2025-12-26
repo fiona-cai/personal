@@ -118,7 +118,7 @@ const BlogPost = ({ post, previousPost, allPosts }) => {
               {previousPost && (
                 <button
                   onClick={() => router.push(`/blog/${previousPost.slug}`)}
-                  className="group flex items-center space-x-3 px-6 py-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                  className="group flex items-center space-x-2 px-6 py-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
