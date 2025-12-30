@@ -61,6 +61,17 @@ const ContentSection = ({ content }) => {
     }
   }, [content]);
 
+  // Check if content is blank
+  const isBlank = !content || (typeof content === 'string' && content.trim() === '');
+
+  if (isBlank) {
+    return (
+      <div className="text-center py-16">
+        <p className="text-2xl text-gray-600">I will write this soon 🫡</p>
+      </div>
+    );
+  }
+
   return (
     <div ref={containerRef} className={styles.markdownClass}>
       <ReactMarkdown components={CodeBlock} className="markdown-class">

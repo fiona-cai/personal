@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 const PhotoDump = ({ content }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageAspects, setImageAspects] = useState({});
-  const imageUrls = content.split('\n').filter(line => line.trim() !== '');
+  
+  // Check if content is blank
+  const isBlank = !content || (typeof content === 'string' && content.trim() === '');
+  const imageUrls = isBlank ? [] : content.split('\n').filter(line => line.trim() !== '');
 
   useEffect(() => {
     // Check image dimensions using browser's native Image constructor
@@ -33,6 +36,14 @@ const PhotoDump = ({ content }) => {
   const closeModal = () => {
     setSelectedImage(null);
   };
+
+  if (isBlank) {
+    return (
+      <div className="text-center py-16">
+        <p className="text-2xl text-gray-600">I will write this soon 🫡</p>
+      </div>
+    );
+  }
 
   return (
     <div className="photo-dump mt-16">

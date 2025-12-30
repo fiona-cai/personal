@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { ISOToDate } from "../../utils";
 
@@ -7,6 +7,7 @@ const BlogSidebar = ({ isOpen, onClose, currentSlug, posts = [] }) => {
   const sidebarRef = useRef(null);
   const backdropRef = useRef(null);
   const postsListRef = useRef(null);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
