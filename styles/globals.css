@@ -178,14 +178,6 @@ body {
   opacity: 0.5;
 }
 
-/* * {
-  cursor: url('/images/IMG_8866.PNG'), auto;
-}
-
-.cat {
-  cursor: url('/images/IMG_8869.PNG'), auto;
-} */
-
 @keyframes shine {
   0% {
     background-position: 0;
@@ -322,8 +314,4 @@ body {
   margin-bottom: 2rem;
   color: rgb(222, 164, 175);
   opacity: 0.8;
-}
-
-a {
-  cursor: url('/images/IMG_8869.png'), auto;
 }
