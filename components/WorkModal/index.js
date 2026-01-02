@@ -77,7 +77,7 @@ const WorkModal = ({ isOpen, onClose, project }) => {
                 <a
                   href={project.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-block w-full tablet:w-auto text-center px-4 py-2 rounded-md bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition"
                 >
                   {project.ctaText || 'Visit project ↗'}
