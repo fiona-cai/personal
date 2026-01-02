@@ -32,15 +32,15 @@ const Footer = ({}) => {
               <Socials />
             </div>
             <div className="flex-1 flex justify-center items-center gap-2">
-              <a href='https://cs.uwatering.com/#your-site-here?nav=prev'>←</a>
-              <a href='https://cs.uwatering.com/#your-site-here' target='_blank'>
+              <a href='https://cs.uwatering.com/https://fiona-cai.vercel.app/nav=prev'>←</a>
+              <a href='https://cs.uwatering.com/https://fiona-cai.vercel.app/' target='_blank'>
                 <img
                   src='https://cs.uwatering.com/icon.black.svg'
                   alt='CS Webring'
                   style={{ width: '24px', height: 'auto', opacity: 0.8 }}
                 />
               </a>
-              <a href='https://cs.uwatering.com/#your-site-here?nav=next'>→</a>
+              <a href='https://cs.uwatering.com/https://fiona-cai.vercel.app/nav=next'>→</a>
             </div>
             <div className="flex-1 flex justify-end">
               <button 
