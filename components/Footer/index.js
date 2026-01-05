@@ -32,7 +32,7 @@ const Footer = ({}) => {
               <Socials />
             </div>
             <div className="flex-1 flex justify-center items-center gap-2">
-              <a href='https://cs.uwatering.com/#https://fiona-cai.vercel.app/nav=prev'>←</a>
+              <a href='https://cs.uwatering.com/#https://fiona-cai.vercel.app?nav=prev'>←</a>
               <a href='https://cs.uwatering.com/#https://fiona-cai.vercel.app/' target='_blank' rel="noopener noreferrer">
                 <img
                   src='https://cs.uwatering.com/icon.black.svg'
@@ -40,7 +40,7 @@ const Footer = ({}) => {
                   style={{ width: '24px', height: 'auto', opacity: 0.8 }}
                 />
               </a>
-              <a href='https://cs.uwatering.com/#https://fiona-cai.vercel.app/nav=next'>→</a>
+              <a href='https://cs.uwatering.com/#https://fiona-cai.vercel.app?nav=next'>→</a>
             </div>
             <div className="flex-1 flex justify-end">
               <button 
